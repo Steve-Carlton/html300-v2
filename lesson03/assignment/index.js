@@ -1,6 +1,6 @@
 //Get data.json into index.html
 
-//Assign info from data.json a variable. JSON info differs from JS arrays in syntax by wrapping entire array in single quotes and wrapping key/values in double quotes. JS seems to be able to read the JSON with double quotes.
+//Assign info from data.json a variable, userProfiles. JSON info differs from JS arrays in syntax by wrapping entire array in single quotes and wrapping key/values in double quotes. JS seems to be able to read the JSON with the double quotes.
 const userProfiles = [{"name":"Paolo Maldini","jobTitle": "Front End Developer",
     "company": "Web Weavers",
     "experience": "3 years",
@@ -56,9 +56,11 @@ const userProfiles = [{"name":"Paolo Maldini","jobTitle": "Front End Developer",
 
 // select DOM node
 const userProfileContainer = document.querySelector(".template-hook");
-
+// Reset counters
+let i = 0;
+let x = 3;
 //============forEach DOM NODE FUNCTION============
-//run a forEach on userProfiles
+//run a forEach on userProfiles array
 userProfiles.forEach(function(el) { //passes each property name/value pair from userProfiles to the el paramenter as arguement to function below.
   //Create new HTML section
   let nametag = document.createElement('section')
@@ -66,9 +68,15 @@ userProfiles.forEach(function(el) { //passes each property name/value pair from 
   <h1>${el.name}</h1>
   `
 
-  //assigning userProfiles property, codeLanguages, a variable
-  let testCase = userProfiles.company;
-  console.log(userProfiles[0].codeLanguages[1]); //<======THIS
+  //how to assign userProfiles property, codeLanguages, a variable? Or it's value a variable?
+  // for (i = 0; i < userProfiles.codeLanguages; i++) {
+  // console.log(userProfiles[i].codeLanguages[i]); //<======THIS
+  //
+  // }
+
+
+  console.log(userProfiles[i].codeLanguages[x]);  //userProfiles is an ARRAY of OBJECTS
+//above line console logs codeLanguages array at index 'x' of object 'i' once per userProfiles entry (4 times).
 
   //Populate above section with object properties values from userProfiles. How to automatically ouput property names as well?
   let card__details = document.createElement('ul')
@@ -91,4 +99,5 @@ userProfiles.forEach(function(el) { //passes each property name/value pair from 
   //Append profile to previously selected HTML element, userProfileContainer
   userProfileContainer.appendChild(nametag)
   nametag.appendChild(card__details)
+  i++;
 })
