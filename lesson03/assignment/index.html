@@ -5,13 +5,57 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Fun with Constructors!</title>
-  <link rel="stylesheet" href="./css/style.css">
-	<script src="index.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+	<main class="main">
+		<div class="card__container">
+			<div class="card__entry">
+				<!-- ========PERSON AVATAR + JOB TITLE========= -->
+				<section class="card__identity">
+					<img src="./img/unsplash-headshot.jpg" alt="Portrait of Steve Smith">
+					<div class="nametag">
+						<h1 class="type name">Steve Smith</h1>
+						<h2 class="type job">Project Manager</h2>
+					</div>
+				</section>
+				<!-- ========PERSON INFO========= -->
+				<aside class="card__profile">
+					<ul class="card__list">
+						<li>
+							<h3>Company: </h3>
+							<h4>Front End Dev Co</h4>
+						</li>
+						<li>
+							<h3>Experience: </h3>
+							<h4>3 years</h4>
+						</li>
+						<li>
+							<h3>School: </h3>
+							<h4>UW</h4>
+						</li>
+						<li>
+							<h3>Major: </h3>
+							<h4>Marketing</h4>
+						</li>
+						<li>
+							<h3>Email: </h3>
+							<h4>steve@fedc.com</h4>
+						</li>
+					</ul>
+					<div class="contact">
+						<img class="icon" src="./img/linkedin.svg" alt="Linked in logo">
+						<span>steve.linkedinprofile.com</span>
+					</div>
+				</aside>
+			</div>
+		</div>
+	</main>
 	<h1>Assignment 3</h1>
-	<section class="template-hook">
-		Fill this section with the templated components
-	</section>
+	<section class="template-hook"></section>
+	
+	<!-- Below script must run at the bottom of body, so it doesn't try to run before the html loads -->
+	<script src="index.js"></script>
 </body>
 </html>
