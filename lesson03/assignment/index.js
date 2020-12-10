@@ -56,9 +56,9 @@ const userProfiles = [{"name":"Paolo Maldini","jobTitle": "Front End Developer",
 
 // select DOM node
 const userProfileContainer = document.querySelector(".template-hook");
-// Reset counters
+// Reset counter
 let i = 0;
-let x = 3;
+
 //============forEach DOM NODE FUNCTION============
 //run a forEach on userProfiles array
 userProfiles.forEach(function(el) { //passes each property name/value pair from userProfiles to the el paramenter as arguement to function below.
@@ -73,10 +73,18 @@ userProfiles.forEach(function(el) { //passes each property name/value pair from 
   // console.log(userProfiles[i].codeLanguages[i]); //<======THIS
   //
   // }
+let x = 0; //reset codeLanguages counter
+console.log("<=====NEW ENTRY=====>"); //divide console output by entry
 
-
+for (y = 0; userProfiles.length > y; y++) {
   console.log(userProfiles[i].codeLanguages[x]);  //userProfiles is an ARRAY of OBJECTS
 //above line console logs codeLanguages array at index 'x' of object 'i' once per userProfiles entry (4 times).
+
+  //need to loop x by number of elements in codeLanguages array
+  //increment x to...
+  x++;
+}
+
 
   //Populate above section with object properties values from userProfiles. How to automatically ouput property names as well?
   let card__details = document.createElement('ul')
@@ -99,5 +107,8 @@ userProfiles.forEach(function(el) { //passes each property name/value pair from 
   //Append profile to previously selected HTML element, userProfileContainer
   userProfileContainer.appendChild(nametag)
   nametag.appendChild(card__details)
+
+  //increment i to access next profile in userProfiles array
   i++;
+
 })
