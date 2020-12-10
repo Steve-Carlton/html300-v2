@@ -69,8 +69,8 @@ userProfiles.forEach(function(el) { //passes each property name/value pair from 
   `
 
 //============Language Proficiencies by Entry. Console output.============
-let x = 0; //reset codeLanguages array element counter
-
+let x =+ 0; //reset codeLanguages array element counter
+//
 //loop per number of entries in userProfiles array
 for (i; userProfiles.length > i; i++) {
   console.log("<=====NEW ENTRY=====>"); //for console output
@@ -81,24 +81,40 @@ for (i; userProfiles.length > i; i++) {
 }
 
 
-  //Populate nametag section with object properties values from userProfiles. How to automatically ouput property names as well?
+  //Populate nametag section with object properties values from userProfiles. Can you automatically ouput property names too?
   let card__details = document.createElement('ul')
   card__details.innerHTML = `
   <li><h3>Job Title: </h3><h4>${el.jobTitle}</h4></li>
   <li><h3>Company: </h3><h4>${el.company}</h4></li>
-  <li><h3>Experience: </h3><h4>${el.experiance}</h4></li>
+  <li><h3>Experience: </h3><h4>${el.experience}</h4></li>
   <li><h3>Education: </h3><h4>${el.school}</h4></li>
   <li><h3>Degree: </h3><h4>${el.major}</h4></li>
   <li><h3>Email: </h3><h4>${el.email}</h4></li>
   <li><h3>LinkedIn: </h3><h4>${el.linkedInUrl}</h4></li>
-  <!-- //code languages -->
-  <li><h3>Code Proficiencies:</h3>
-    <ul>
-      <li><h4>${el.codeLanguages} </h4></li>
-    </ul>
-    </li>
+  <li><h3>Code Proficiencies: </h3><h4>${el.codeLanguages} </h4></li>
   `
+
+  //==========create ul for code languages========= WIP
+  // let card__code = document.createElement('ul')
+  // //code proficiencies entries
+  // for (i; userProfiles.length > i; i++) { //loop for each number of entries in userProfiles array
+  //   console.log('<===NEW ENTRY===>')
+  //     card__details.appendChild(card__code)
+  //
+  //   for (x; userProfiles[i].codeLanguages.length > x; x++) {   //loop runs for array codeLanguages.length number of times, then increments x.
+  //     console.log(userProfiles[i].codeLanguages[x]);//log codeLanguages array element at index x. <<<<
+  //     let codeEntry = document.createElement('ul')
+  //     codeEntry.innerHTML = `
+  //     <li><h4>${userProfiles[i].codeLanguages[x]} </h4></li>
+  //     `
+  //     card__code.appendChild(codeEntry)
+  //   }
+  // }
+
+
   //Append profile to previously selected HTML element, userProfileContainer
   userProfileContainer.appendChild(nametag)
   nametag.appendChild(card__details)
+
+
 })
