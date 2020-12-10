@@ -53,40 +53,35 @@ const userProfiles = [{"name":"Paolo Maldini","jobTitle": "Front End Developer",
     }
   ]
 
-
 // select DOM node
 const userProfileContainer = document.querySelector(".template-hook");
-// Reset counter
-let i = 0;
+
+// Update userProfiles entry counter
+let i =+ 0;
 
 //============forEach DOM NODE FUNCTION============
 //run a forEach on userProfiles array
-userProfiles.forEach(function(el) { //passes each property name/value pair from userProfiles to the el paramenter as arguement to function below.
+userProfiles.forEach(function(el) { //passes each property name/value pair from userProfiles' array of objects to the el paramenter as arguement to function below.
   //Create new HTML section
   let nametag = document.createElement('section')
   nametag.innerHTML = `
   <h1>${el.name}</h1>
   `
 
-  //how to assign userProfiles property, codeLanguages, a variable? Or it's value a variable?
-  // for (i = 0; i < userProfiles.codeLanguages; i++) {
-  // console.log(userProfiles[i].codeLanguages[i]); //<======THIS
-  //
-  // }
-let x = 0; //reset codeLanguages counter
-console.log("<=====NEW ENTRY=====>"); //divide console output by entry
+//============Language Proficiencies by Entry. Console output.============
+let x = 0; //reset codeLanguages array element counter
 
-for (y = 0; userProfiles.length > y; y++) {
-  console.log(userProfiles[i].codeLanguages[x]);  //userProfiles is an ARRAY of OBJECTS
-//above line console logs codeLanguages array at index 'x' of object 'i' once per userProfiles entry (4 times).
-
-  //need to loop x by number of elements in codeLanguages array
-  //increment x to...
-  x++;
+//loop per number of entries in userProfiles array
+for (i; userProfiles.length > i; i++) {
+  console.log("<=====NEW ENTRY=====>"); //for console output
+  //loop runs for array codeLanguages.length number of times, then increments x.
+  for (x = 0; userProfiles[i].codeLanguages.length > x; x++) {
+    console.log(userProfiles[i].codeLanguages[x]); //log codeLanguages array element at index x.
+  }
 }
 
 
-  //Populate above section with object properties values from userProfiles. How to automatically ouput property names as well?
+  //Populate nametag section with object properties values from userProfiles. How to automatically ouput property names as well?
   let card__details = document.createElement('ul')
   card__details.innerHTML = `
   <li><h3>Job Title: </h3><h4>${el.jobTitle}</h4></li>
@@ -97,18 +92,13 @@ for (y = 0; userProfiles.length > y; y++) {
   <li><h3>Email: </h3><h4>${el.email}</h4></li>
   <li><h3>LinkedIn: </h3><h4>${el.linkedInUrl}</h4></li>
   <!-- //code languages -->
-  <li><h3>Language Proficiencies:</h3>
+  <li><h3>Code Proficiencies:</h3>
     <ul>
       <li><h4>${el.codeLanguages} </h4></li>
     </ul>
     </li>
   `
-
   //Append profile to previously selected HTML element, userProfileContainer
   userProfileContainer.appendChild(nametag)
   nametag.appendChild(card__details)
-
-  //increment i to access next profile in userProfiles array
-  i++;
-
 })
