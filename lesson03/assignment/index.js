@@ -11,21 +11,65 @@ const userProfiles = [{"name":"Paolo Maldini","jobTitle": "Front End Developer",
     "codeLanguages": [
         "HTML", "CSS", "JavaScript", "Node", "Express"
     ]
-  }
-]
+  },
+    {
+      "name": "Barbara Bonansea",
+      "jobTitle": "Software Engineer",
+      "company": "Excellence in the Cloud",
+      "experience": "12 years",
+      "school": "University of Southern California",
+      "major": "Computer Science",
+      "email": "barbara@example.com",
+      "linkedInUrl": "barbara.linkedinprofile.com",
+      "codeLanguages": [
+          "HTML", "JavaScript", "C", "Go"
+      ]
+    },
+    {
+      "name": "Javier Hernandez",
+      "jobTitle": "User Experience Engineer",
+      "company": "Web Sites and More",
+      "experience": "5 years",
+      "school": "Seattle University",
+      "major": "Performing Arts",
+      "email": "javier@example.com",
+      "linkedInUrl": "javier.linkedinprofile.com",
+      "codeLanguages": [
+          "HTML", "CSS"
+      ]
+    },
+    {
+      "name": "Maribel Dominguez",
+      "jobTitle": "Front End Engineer",
+      "company": "Bits and Bytes",
+      "experience": "6 years",
+      "school": "University of Washington",
+      "major": "Mechanical Engineering",
+      "email": "maribel@example.com",
+      "linkedInUrl": "maribel.linkedinprofile.com",
+      "codeLanguages": [
+         "HTML", "CSS", "JavaScript", "React", "Vue", "Redux"
+      ]
+    }
+  ]
 
 
 // select DOM node
 const userProfileContainer = document.querySelector(".template-hook");
 
-//============FOR EACH DOM NODE FUNCTION============
+//============forEach DOM NODE FUNCTION============
 //run a forEach on userProfiles
-userProfiles.forEach(function(el) { //passes each key/value pair from userProfiles to the el paramenter as arguement to function
+userProfiles.forEach(function(el) { //passes each property name/value pair from userProfiles to the el paramenter as arguement to function below.
   //Create new HTML section
   let nametag = document.createElement('section')
   nametag.innerHTML = `
   <h1>${el.name}</h1>
   `
+
+  //assigning userProfiles property, codeLanguages, a variable
+  let testCase = userProfiles.company;
+  console.log(userProfiles[0].codeLanguages[1]); //<======THIS
+
   //Populate above section with object properties values from userProfiles. How to automatically ouput property names as well?
   let card__details = document.createElement('ul')
   card__details.innerHTML = `
