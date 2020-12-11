@@ -68,19 +68,6 @@ userProfiles.forEach(function(el) { //passes each property name/value pair from 
   <h1>${el.name}</h1>
   `
 
-//============Language Proficiencies by Entry. Console output.============
-// let x =+ 0; //reset codeLanguages array element counter
-
-//loop per number of entries in userProfiles array
-// for (i; userProfiles.length > i; i++) {
-//   console.log("<=====NEW ENTRY=====>"); //for console output
-//   //loop runs for array codeLanguages.length number of times, then increments x.
-//   for (x = 0; userProfiles[i].codeLanguages.length > x; x++) {
-//     console.log(userProfiles[i].codeLanguages[x]); //log codeLanguages array element at index x.
-//   }
-// }
-
-
   //Populate nametag section with object properties values from userProfiles. Can you automatically ouput property names too?
   let card__details = document.createElement('ul')
   card__details.innerHTML = `
@@ -91,27 +78,44 @@ userProfiles.forEach(function(el) { //passes each property name/value pair from 
   <li><h3>Degree: </h3><h4>${el.major}</h4></li>
   <li><h3>Email: </h3><h4>${el.email}</h4></li>
   <li><h3>LinkedIn: </h3><h4>${el.linkedInUrl}</h4></li>
-  <li><h3>Code Proficiencies: </h3><h4>${el.codeLanguages} </h4></li>
+  <li><h3>Code Proficiencies: </h3></li>
   `
 
-  //==========create ul for code languages========= WIP
+  // ==========create ul for code languages========= WIP
 
-  //code proficiencies entries
-  for (i; userProfiles.length > i; i++) { //loop for each number of entries in userProfiles array
-    console.log('<===NEW ENTRY===>')
-      let card__code = document.createElement('ul')
-      card__details.appendChild(card__code)
+for (x = 0; userProfiles[i].codeLanguages.length > x; x++) { //loop runs for array codeLanguages.length number of times, then increments x.
+  console.log('<===NEW CODE Language===>')
+  // console.log(userProfiles[i].codeLanguages[x]);//log codeLanguages array element at index x. <<<<
+  let codeEntry = document.createElement('ul')
+  codeEntry.innerHTML = `
+  <li><h4>${userProfiles[i].codeLanguages[x]} </h4></li>
+  `
+  card__details.appendChild(codeEntry)
+}
 
-    for (x = 0; userProfiles[i].codeLanguages.length > x; x++) {   //loop runs for array codeLanguages.length number of times, then increments x.
-      console.log(userProfiles[i].codeLanguages[x]);//log codeLanguages array element at index x. <<<<
-      let codeEntry = document.createElement('ul')
-      codeEntry.innerHTML = `
-      <li><h4>${userProfiles[i].codeLanguages[x]} </h4></li>
-      `
-      card__code.appendChild(codeEntry)
-    }
-    x = 0; //Reset x
-  }
+
+
+  //
+  // //code proficiencies entries
+  // for (i; userProfiles.length > i; i++) { //loop for each number of entries in userProfiles array
+  //   console.log('<===NEW PROFILE===>')
+  //   let card__code = document.createElement('ul')
+  //   card__code.innerHTML = `
+  //   <li>TEST</li>
+  //   `
+  //
+  //
+  //   for (x = 0; userProfiles[i].codeLanguages.length > x; x++) {   //loop runs for array codeLanguages.length number of times, then increments x.
+  //     console.log('<===NEW CODE Language===>')
+  //     // console.log(userProfiles[i].codeLanguages[x]);//log codeLanguages array element at index x. <<<<
+  //     let codeEntry = document.createElement('ul')
+  //     codeEntry.innerHTML = `
+  //     <li><h4>${userProfiles[i].codeLanguages[x]} </h4></li>
+  //     `
+  //     card__code.appendChild(codeEntry)
+  //   }
+  // card__details.appendChild(card__code)
+  // }
 
 
   //Append profile to previously selected HTML element, userProfileContainer
@@ -119,4 +123,19 @@ userProfiles.forEach(function(el) { //passes each property name/value pair from 
   nametag.appendChild(card__details)
 
 
+i++;
 })
+
+//=====DEV NOTES
+//
+// //============Language Proficiencies by Entry. Console output.============
+// let x =+ 0; //reset codeLanguages array element counter
+// //
+// //loop per number of entries in userProfiles array
+// for (i; userProfiles.length > i; i++) {
+//   console.log("<=====NEW ENTRY=====>"); //for console output
+//   //loop runs for array codeLanguages.length number of times, then increments x.
+//   for (x = 0; userProfiles[i].codeLanguages.length > x; x++) {
+//     console.log(userProfiles[i].codeLanguages[x]); //log codeLanguages array element at index x.
+//   }
+// }
