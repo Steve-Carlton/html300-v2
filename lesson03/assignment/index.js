@@ -59,7 +59,7 @@ const userProfiles = [{
 const userProfileContainer = document.querySelector(".template-hook");
 
 // Update userProfiles entry counter
-let i = +0;
+let i =+ 0;
 
 //============forEach DOM NODE FUNCTION============
 //run a forEach on userProfiles array
@@ -71,7 +71,7 @@ userProfiles.forEach(function(el) { //passes each property name/value pair from 
   `
 
   //==========Populate nametag section with object properties values from userProfiles.=========
-  //Can you automatically ouput property names too?
+  //For below, can you automatically ouput property names too?
   let card__details = document.createElement('ul')
   card__details.innerHTML = `
   <li><h3>Job Title: </h3><h4>${el.jobTitle}</h4></li>
@@ -85,19 +85,24 @@ userProfiles.forEach(function(el) { //passes each property name/value pair from 
   `
 
   //============Code Proficiencies by Entry. DOM output.============
+  //create nested ul element for code languages
+  let codeEntry = document.createElement('ul')
 
-  for (x = 0; userProfiles[i].codeLanguages.length > x; x++) { //loop runs for array codeLanguages.length number of times, then increments x.
-    // console.log('<===NEW CODE Language===>') // test line
-    // console.log(userProfiles[i].codeLanguages[x]);//log codeLanguages array element at index x. <<<<
-    let codeEntry = document.createElement('ul')
-    codeEntry.innerHTML = `
-  <li><h4>${userProfiles[i].codeLanguages[x]} </h4></li>
-  `
-    card__details.appendChild(codeEntry)
+  //reset x counter (codeLanguages array length)
+  let x = 0;
+  for (x; userProfiles[i].codeLanguages.length > x; x++) { //loop runs for array codeLanguages.length number of times
+    let newCodeLang = document.createElement('li')
+    newCodeLang.innerHTML = `
+    <li><h4>${userProfiles[i].codeLanguages[x]} </h4></li>
+    `
+      card__details.appendChild(codeEntry)
+      codeEntry.appendChild(newCodeLang)
   }
   //Append profile to previously selected HTML element, userProfileContainer
   userProfileContainer.appendChild(nametag)
   nametag.appendChild(card__details)
+
+  // update i counter (next user profile entry)
   i++;
 })
 
