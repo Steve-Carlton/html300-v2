@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+header {
+  border: 2px solid red;
+}
+
+.main {
+  height: 20rem;
+  width: 100%;
+  margin: auto;
+  border: 2px solid yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.main__map {
+  width: 100px;
+  height: 100px;
+  border: 2px solid green;
+}
+
+
+
+.main__list {
+  width: 100px;
+  height: 100px;
+  border: 2px solid purple;
+}
+
+
+
+footer {
+    border: 2px solid blue;
+}
