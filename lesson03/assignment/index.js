@@ -54,9 +54,13 @@ const userProfiles = [{
     ]
   }
 ]
+// select target parent node
+const main = document.querySelector(".main");//<<<<<<<<<<<<<<<<<<<<WORK HERE
 
-// select DOM node
+// select target node to populate
 const userProfileContainer = document.querySelector(".template-hook");
+
+main.appendChild(userProfileContainer)
 
 // Update userProfiles entry counter
 let i =+ 0;
@@ -139,6 +143,14 @@ userProfiles.forEach(function(el) { //passes each property name/value pair from 
 
   //============OPTIONAL SECTION========Code Proficiencies by Entry. DOM output.============
   //create nested ul element for code languages
+  //Code proficiencies container
+  let cardAside = document.createElement('aside')
+  cardAside.className = "code__aside"
+  cardAside.innerHTML = `
+    <h3>Proficiencies: </h3>
+  `
+  cardEntry.appendChild(cardAside)
+
   let codeEntry = document.createElement('ul')
 
   //reset x counter (codeLanguages array length)
@@ -148,12 +160,12 @@ userProfiles.forEach(function(el) { //passes each property name/value pair from 
     newCodeLang.innerHTML = `
     <li><h4>${userProfiles[i].codeLanguages[x]} </h4></li>
     `
-      cardEntry.appendChild(codeEntry)
+      cardAside.appendChild(codeEntry)
       codeEntry.appendChild(newCodeLang)
   }
+
   //Append new profile card to previously selected HTML element, cardContainer
   userProfileContainer.appendChild(cardContainer)
-  // profileName.appendChild(card__details)
 
   // update i counter (next user profile entry)
   i++;
