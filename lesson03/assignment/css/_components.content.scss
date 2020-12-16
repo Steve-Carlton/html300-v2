@@ -57,8 +57,8 @@ h2 {
 
   &__entry {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
+    flex-flow: nowrap;
+    justify-content: center;
     background-color: $white;
     padding: 2.5rem;
   }
@@ -82,7 +82,7 @@ h2 {
   background-color: $gray;
   margin: 0;
   padding: 0.5rem 2rem 2rem;
-  flex-grow: 3;
+  flex-grow: 1;
   }
   &__list {
     margin-top: 4%;
@@ -92,6 +92,14 @@ h2 {
     padding-inline-start: 0;
   }
 }
+
+.code__aside {
+  background-color: aliceblue;
+  border-radius: 2%;
+  border: 2px solid $slate;
+  padding: 0.5rem 1rem 2rem;
+}
+
 // ========PERSON URL========
 .contact {
   display: flex;
@@ -110,7 +118,7 @@ span {
 }
 
 // ========MEDIA QUERIES========
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 966px) {
 //tablet sizes — vertical orientation
   .card {
     &__entry {
