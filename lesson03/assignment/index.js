@@ -54,9 +54,13 @@ const userProfiles = [{
     ]
   }
 ]
+// select target parent node
+const main = document.querySelector(".main");
 
-// select DOM node
+// select target node to populate
 const userProfileContainer = document.querySelector(".template-hook");
+
+main.appendChild(userProfileContainer)
 
 // Update userProfiles entry counter
 let i =+ 0;
@@ -64,28 +68,89 @@ let i =+ 0;
 //============forEach DOM NODE FUNCTION============
 //run a forEach on userProfiles array
 userProfiles.forEach(function(el) { //passes each property name/value pair from userProfiles' array of objects to the el paramenter as arguement to function below.
-  //Create new HTML section
-  let nametag = document.createElement('section')
-  nametag.innerHTML = `
-  <h1>${el.name}</h1>
-  `
 
-  //==========Populate nametag section with object properties values from userProfiles.=========
-  //For below, can you automatically ouput property names too?
-  let card__details = document.createElement('ul')
-  card__details.innerHTML = `
-  <li><h3>Job Title: </h3><h4>${el.jobTitle}</h4></li>
+  //how to make these html elements unique? string + i ??
+  //cardContainer Create card__container element. Nest it in userProfileContainer
+  let cardContainer = document.createElement('div')
+  cardContainer.className = "card__container" + " " + i;
+  userProfileContainer.appendChild(cardContainer)
+
+  //cardEntry Create card__entry element. Nest it in cardContainer
+  let cardEntry = document.createElement('div')
+  cardEntry.className = "card__entry" + " " + i;
+  cardContainer.appendChild(cardEntry)
+
+  //========CARD__IDENTITY
+  //cardIdentity Create card__identity element. Nest it in cardEntry.
+  let cardIdentity = document.createElement('section')
+  cardIdentity.className = "card__identity" + " " + i;
+  cardEntry.appendChild(cardIdentity)
+
+
+  //========HEADSHOT
+  let headshot = document.createElement('img')
+  headshot.src = "img/headshot.jpg";
+  headshot.className = "headshot";
+  cardIdentity.appendChild(headshot)
+
+
+  //========NAMETAG
+  //Enter new profile name. Nest in card__identity
+  let profileName = document.createElement('div')
+  profileName.className = "nametag" + " " + i;
+  profileName.innerHTML = `
+  <h1>${el.name}</h1>
+  <h2>${el.jobTitle}</h2>
+  `
+  cardIdentity.appendChild(profileName)
+
+  //========CARD__PROFILE
+  //Enter new profile c/v info. Nest in card__entry.
+  let cardProfile = document.createElement('aside')
+  cardProfile.className = "card__profile" + " " + i;
+  cardEntry.appendChild(cardProfile)
+
+  //========CARD__LIST
+  //Create list and append it to cardProfile.
+  //(For below, can you automatically ouput property names too?)
+  let cardList = document.createElement('ul')
+  cardList.className = "card__list" + " " + i;
+  cardList.innerHTML = `
   <li><h3>Company: </h3><h4>${el.company}</h4></li>
   <li><h3>Experience: </h3><h4>${el.experience}</h4></li>
   <li><h3>Education: </h3><h4>${el.school}</h4></li>
   <li><h3>Degree: </h3><h4>${el.major}</h4></li>
   <li><h3>Email: </h3><h4>${el.email}</h4></li>
-  <li><h3>LinkedIn: </h3><h4>${el.linkedInUrl}</h4></li>
-  <li><h3>Code Proficiencies: </h3></li>
   `
+  cardProfile.appendChild(cardList)
 
-  //============Code Proficiencies by Entry. DOM output.============
+  //========LinkedIn CONTACT ELEMENTS
+  let contactContainer = document.createElement('div')
+  contactContainer.className = "contact" + " " + i;
+  cardProfile.appendChild(contactContainer)
+
+  let linkedInIcon = document.createElement('img')
+  linkedInIcon.className = "icon"
+  linkedInIcon.src = "img/linkedin.svg";
+  contactContainer.appendChild(linkedInIcon)
+
+  let linkedInUrl = document.createElement('span')
+  linkedInUrl.innerHTML = `
+  ${el.linkedInUrl}
+  `
+  contactContainer.appendChild(linkedInUrl)
+
+
+  //============OPTIONAL SECTION========Code Proficiencies by Entry. DOM output.============
   //create nested ul element for code languages
+  //Code proficiencies container
+  let cardAside = document.createElement('aside')
+  cardAside.className = "code__aside"
+  cardAside.innerHTML = `
+    <h3>Proficiencies: </h3>
+  `
+  cardEntry.appendChild(cardAside)
+
   let codeEntry = document.createElement('ul')
 
   //reset x counter (codeLanguages array length)
@@ -95,12 +160,12 @@ userProfiles.forEach(function(el) { //passes each property name/value pair from 
     newCodeLang.innerHTML = `
     <li><h4>${userProfiles[i].codeLanguages[x]} </h4></li>
     `
-      card__details.appendChild(codeEntry)
+      cardAside.appendChild(codeEntry)
       codeEntry.appendChild(newCodeLang)
   }
-  //Append profile to previously selected HTML element, userProfileContainer
-  userProfileContainer.appendChild(nametag)
-  nametag.appendChild(card__details)
+
+  //Append new profile card to previously selected HTML element, cardContainer
+  userProfileContainer.appendChild(cardContainer)
 
   // update i counter (next user profile entry)
   i++;
