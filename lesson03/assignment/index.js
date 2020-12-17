@@ -55,7 +55,7 @@ const userProfiles = [{
   }
 ]
 // select target parent node
-const main = document.querySelector(".main");//<<<<<<<<<<<<<<<<<<<<WORK HERE
+const main = document.querySelector(".main");
 
 // select target node to populate
 const userProfileContainer = document.querySelector(".template-hook");
@@ -69,10 +69,10 @@ let i =+ 0;
 //run a forEach on userProfiles array
 userProfiles.forEach(function(el) { //passes each property name/value pair from userProfiles' array of objects to the el paramenter as arguement to function below.
 
-  //??how to make these unique and prevent overwriting when looped?? string + i ??
+  //how to make these html elements unique? string + i ??
   //cardContainer Create card__container element. Nest it in userProfileContainer
   let cardContainer = document.createElement('div')
-  cardContainer.className = "card__container" + " " + i; //will this work???
+  cardContainer.className = "card__container" + " " + i;
   userProfileContainer.appendChild(cardContainer)
 
   //cardEntry Create card__entry element. Nest it in cardContainer
