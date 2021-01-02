@@ -9,9 +9,88 @@ html, body {
   font-size: 16px;
   font-family: sans-serif;
   overflow: hidden;
-  background-color: black;
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,51,74,1) 150%);
 }
 
+/* ==========PRELOADER========== */
+.preloader {
+  display: flex;
+  position: fixed;
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,51,74,1) 150%);
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 0;
+  /* add a delay here to see animation */
+  transition: opacity 0.3s linear;
+  width: 100%;
+  z-index: 9999;
+}
+
+.circle {
+  position: relative;
+  height: 1.25rem;
+  width: 1.25rem;
+  border-radius: 50%;
+  background: red;
+  margin: .8rem;
+  animation: bounceyPreload 1.2s ease-in-out infinite;
+  }
+/* SASS not connected? &: sudo syntax not working */
+  .circle:nth-of-type(1) {
+    animation-delay: 0;
+  }
+  .circle:nth-of-type(2) {
+    animation-delay: 150ms;
+  }
+  .circle:nth-of-type(3) {
+    animation-delay: 300ms;
+  }
+  .circle:nth-of-type(4) {
+    animation-delay: 450ms;
+  }
+
+
+
+@keyframes bounceyPreload {
+  0% {
+    bottom: 0;
+    background-color: red;
+  }
+  15% {
+    background-color: orange;
+  }
+  20% {
+    bottom: -1rem;
+  }
+  30% {
+    background-color: yellow;
+  }
+  40% {
+    bottom: 5rem;
+  }
+  45% {
+    background-color: green;
+  }
+  60% {
+    background-color: blue;
+  }
+  75% {
+    background-color: purple;
+  }
+  85% {
+    background-color: purple;
+  }
+  100% {
+    bottom: 0;
+    background-color: red;
+  }
+}
+
+/* ==========BODY========== */
 header {
   height: 20vh;
   border: 2px solid red;
