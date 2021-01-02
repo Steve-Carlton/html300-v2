@@ -1,3 +1,4 @@
+// ==========RAIN==========
 var makeItRain = function() {
   //clear out everything
   $('.rain').empty();
@@ -22,12 +23,12 @@ var makeItRain = function() {
 }
 makeItRain();
 
+// ==========PRELOADER==========
+
 const preloader = document.querySelector('.preloader');
 
 const fadeEffect = setInterval(() => {
-  // if we don't set opacity 1 in CSS, then
-  // it will be equaled to "" -- that's why
-  // we check it, and if so, set opacity to 1
+  //check and-or set preload opacity
   if (!preloader.style.opacity) {
     preloader.style.opacity = 1;
   }
