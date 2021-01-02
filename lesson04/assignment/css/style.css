@@ -34,7 +34,7 @@ header {
   left: 0;
   bottom: 0;
   /* add a delay transition to see animation */
-  transition: opacity 0.5s linear;
+  transition: opacity 0.5s 5s linear;
   width: 100%;
   z-index: 9999;
 }
