@@ -19,7 +19,7 @@ header {
   border: 2px solid red;
   background-color: navy;
   position: relative;
-  z-index: 999999999;
+  z-index: 100;
 }
 
 /* ==========PRELOADER========== */
@@ -33,19 +33,19 @@ header {
   align-items: center;
   left: 0;
   bottom: 0;
-  /* add a delay transition to see animation */
+  /* Below delay added for viewing purposes only */
   transition: opacity 0.5s 5s linear;
   width: 100%;
-  z-index: 9999;
+  z-index: 10;
 }
-/* ==========DOT ANIMATION========== */
+/* ==========DOT BOUNCE ANIMATION========== */
 .circle {
   position: relative;
-  height: 1.25rem;
-  width: 1.25rem;
+  height: .5rem;
+  width: .5rem;
   border-radius: 50%;
-  background: red;
-  margin: .8rem;
+  background: #5E66AE;
+  margin: .35rem;
   animation: bounceyPreload 1.2s ease-in-out infinite;
   }
 /* SASS not connected? &: sudo syntax not working */
@@ -62,38 +62,34 @@ header {
     animation-delay: 450ms;
   }
 
+
 @keyframes bounceyPreload {
   0% {
     bottom: 0;
-    background-color: red;
+    background-color: #5E66AE;
   }
   15% {
-    background-color: orange;
+    background-color: #5E66AE;
   }
   20% {
-    bottom: -1rem;
+    bottom: -.5rem;
   }
   30% {
-    background-color: yellow;
+    background-color: #5E66AE;
   }
   40% {
-    bottom: 5rem;
+    bottom: .75rem;
   }
   45% {
-    background-color: green;
+    background-color: #00FFEB;
+    box-shadow: 0 0 8px #00FFEB;
   }
-  60% {
-    background-color: blue;
-  }
-  75% {
-    background-color: purple;
-  }
-  85% {
-    background-color: purple;
+  80% {
+    background-color: #5E66AE;
   }
   100% {
     bottom: 0;
-    background-color: red;
+    background-color: #5E66AE;
   }
 }
 
@@ -104,18 +100,16 @@ header {
   width: 15px;
   height: 120px;
   pointer-events: none;
-  animation: drop .6s linear infinite;
+  animation: drop 0s linear infinite;
 }
 
 @keyframes drop {
   0% {
     transform: translateY(0vh);
-    /* transform: translateX(1vw); */
   }
 
   100% {
     transform: translateY(100vh);
-    /* transform: translateX(100vw); */
   }
 }
 
@@ -124,14 +118,13 @@ header {
   height: 60%;
   transform: rotate(15deg);
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25));
-  animation: stem .6s linear infinite;
+  animation: stem 0s linear infinite;
 }
 
 @keyframes stem {
   0% {
     opacity: 1;
   }
-
   65% {
     opacity: .75;
     background: grey;
@@ -184,7 +177,7 @@ header {
   width: 100%;
   margin: auto;
   position: relative;
-  z-index: 1;
+  z-index: 2;
   border: 2px solid magenta;
   display: flex;
   flex-direction: column;
@@ -197,7 +190,7 @@ header {
   height: 10rem;
   border: 2px solid green;
   background-color: green;
-  z-index: 1;
+  z-index: 2;
 }
 
 
@@ -208,12 +201,66 @@ header {
   border: 2px solid purple;
 }
 
+.sidenav {
+  position:relative;
+  z-index: 11;
+}
+
+.button {
+  display: block;
+  position:absolute;
+  overflow:hidden;
+  background:grey;
+  color:#fff;
+  font-size:16px;
+  border:none;
+  border-radius: 0 .8rem .8rem 0;
+  height: auto;
+  width: auto;
+  padding: 1rem;
+  margin: 1rem 1rem 1rem 0;
+  transition: all .5s cubic-bezier(.67,-.51,.42,1.43);
+  z-index: 11;
+}
+
+.button:hover {
+  font-size:24px;
+  width: auto;
+  padding-left: 3rem;
+  cursor: pointer;
+}
+
+/* =====BUTTON SHEEN ANIMATION===== */
+/* this creates the html gradient AFTER class "button" element.*/
+.button::after {
+  content:'';
+  position:absolute;
+  height: 151%;
+  width: 82%;
+  top: -29%;
+  right: 0%;
+  bottom: 0%;
+  left: -100%;
+  background:linear-gradient(to right,rgba(209,112,60,0),rgba(255,255,255,0.5) 50%,rgba(209,112,60,0));
+  transform: rotate(25deg);
+}
+
+.button:hover::after, .button:focus::after {
+  animation: sheen .8s .5s;
+}
+
+@keyframes sheen {
+  100% {
+    transform: translate(20rem, 0rem);
+  }
+}
+
 /* =============FOOTER============= */
 
 footer {
   height: 15vh;
   position: relative;
-  z-index: 1;
+  z-index: 2;
   border: 2px solid blue;
   background-color: darkgreen;
 }

@@ -39,4 +39,5 @@ const fadeEffect = setInterval(() => {
   }
 }, 100);
 
-window.addEventListener('load', fadeEffect);
+// Line below throws an error. Code still runs.
+// window.addEventListener('load', fadeEffect);
