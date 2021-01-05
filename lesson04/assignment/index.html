@@ -6,10 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
   <title>Seattle Playgrounds</title>
 </head>
+
 <body>
+  <!-- ==========HEADER========== -->
   <header>
     <div class="container">
       <h1>Seattle Playgrounds</h1>
@@ -17,26 +18,26 @@
   </header>
   <!-- ==========PRELOADER========== -->
   <div class="preloader">
-    <div class= "circle"></div>
-    <div class= "circle"></div>
-    <div class= "circle"></div>
-    <div class= "circle"></div>
-    <!-- ==========RAIN PRELOADER — prevents hovers========== -->
+    <div class= "preloader__dot"></div>
+    <div class= "preloader__dot"></div>
+    <div class= "preloader__dot"></div>
+    <div class= "preloader__dot"></div>
+    <!-- ==========RAIN PRELOADER==========  — this prevents hovers on homepage -->
     <!-- <div class="rainContainer">
-      <div class="rainElement"></div>
-      <div class="backRain"></div>
+      <div class="rainContainer__front"></div>
+      <div class="rainContainer__back"></div>
     </div> -->
   </div>
 
   <!-- ==========SIDENAV========== -->
-  <div class="button">
-    <div>Button</div>
+  <div class="sidenav">
+    <div class="sidenav__tab">Button</div>
   </div>
 
   <!-- ==========RAIN========== -->
   <div class="rainContainer">
-    <div class="rainElement"></div>
-    <div class="backRain"></div>
+    <div class="rainContainer__front"></div>
+    <div class="rainContainer__back"></div>
   </div>
 
 <!-- ==========MAIN CONTENT========== -->
@@ -48,7 +49,6 @@
       <p>list</p>
     </div>
   </main>
-
 
   <!-- ==========FOOTER========== -->
   <footer>

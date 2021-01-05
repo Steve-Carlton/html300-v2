@@ -4,9 +4,9 @@
   //mixin font stack test
   @include font-stack-brand;
 }
-
 /* ==========BODY========== */
-html, body {
+body,
+html {
   margin: 0;
   padding: 0;
   font-size: 16px;
@@ -22,8 +22,9 @@ header {
   position: relative;
   z-index: 100;
 }
-
 /* ==========PRELOADER========== */
+// this prevents hover animations on homepage. z-index value lowered.
+
 .preloader {
   display: flex;
   position: fixed;
@@ -38,62 +39,69 @@ header {
   transition: opacity 0.5s 1.5s linear;
   width: 100%;
   z-index: 10;
-}
-/* ==========DOT BOUNCE ANIMATION========== */
-.circle {
-  position: relative;
-  height: .5rem;
-  width: .5rem;
-  border-radius: 50%;
-  background: $stormblue;
-  margin: .35rem;
-  animation: bounceyPreload 1.2s ease-in-out infinite;
+  /* ==========DOT ANIMATION========== */
+  &__dot {
+    position: relative;
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 50%;
+    background: $stormblue;
+    margin: 0.35rem;
+    animation: dotPreload 1.2s ease-in-out infinite;
 
-/* SASS nesting syntax not working. SASS not connected. Create component.scss file. Then @import it into styles.scss files. */
-  &:nth-of-type(1) {
-    animation-delay: 0;
-  }
-  &:nth-of-type(2) {
-    animation-delay: 150ms;
-  }
-  &:nth-of-type(3) {
-    animation-delay: 300ms;
-  }
-  &:nth-of-type(4) {
-    animation-delay: 450ms;
+    &:nth-of-type(1) {
+      animation-delay: 0;
+    }
+
+    &:nth-of-type(2) {
+      animation-delay: 150ms;
+    }
+
+    &:nth-of-type(3) {
+      animation-delay: 300ms;
+    }
+
+    &:nth-of-type(4) {
+      animation-delay: 450ms;
+    }
   }
 }
-
-@keyframes bounceyPreload {
+@keyframes dotPreload {
   0% {
     bottom: 0;
     background-color: $stormviolet;
   }
+
   15% {
     background-color: $stormviolet;
   }
+
   20% {
     bottom: -.5rem;
   }
+
   30% {
     background-color: $stormviolet;
   }
+
   40% {
-    bottom: .75rem;
+    bottom: 0.75rem;
   }
+
   45% {
     background-color: $cyan;
     box-shadow: 0 0 8px $cyan;
   }
+
   80% {
     background-color: $stormviolet;
   }
+
   100% {
     bottom: 0;
     background-color: $stormviolet;
   }
 }
-
 /* =============CORE RAIN ANIMATION============= */
 .drop {
   position: absolute;
@@ -103,7 +111,6 @@ header {
   pointer-events: none;
   animation: drop 0s linear infinite;
 }
-
 @keyframes drop {
   0% {
     transform: translateY(0vh);
@@ -121,25 +128,25 @@ header {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25));
   animation: stem 0s linear infinite;
 }
-
 @keyframes stem {
   0% {
     opacity: 1;
   }
+
   65% {
-    opacity: .75;
+    opacity: 0.75;
     background: $grey;
   }
+
   70% {
-    opacity: .5;
+    opacity: 0.5;
   }
+
   100% {
     opacity: 0;
   }
 }
-
 /* =============RAIN ELEMENTS============= */
-
 .rainContainer {
   position: absolute;
   height: 65vh;
@@ -148,28 +155,27 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
 
-.rainElement {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 65vh;
-  opacity: .5;
-  /* border: 2px dotted green; */
-}
+  &__front {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 65vh;
+    opacity: 0.5;
+    /* border: 2px dotted green; */
+  }
 
- .backRain {
-  position: absolute;
-  display: block;
-  width: 90%;
-  height: 65vh;
-  bottom: 20vh;
-  /* right: 2vw; */
-  /* border: 2px dotted yellow; */
-  opacity: .25;
+  &__back {
+    position: absolute;
+    display: block;
+    width: 90%;
+    height: 65vh;
+    bottom: 20vh;
+    /* right: 2vw; */
+    /* border: 2px dotted yellow; */
+    opacity: 0.25;
+  }
 }
-
 /* ==========MAIN SITE CONTENT========== */
 .main {
   height: 65vh;
@@ -192,7 +198,6 @@ header {
   z-index: 2;
 }
 
-
 .main__list {
   width: 10rem;
   height: 10rem;
@@ -200,57 +205,57 @@ header {
   border: 2px solid purple;
 }
 
-.button {
+.sidenav {
   display: block;
-  position:absolute;
-  overflow:hidden;
+  position: absolute;
+  overflow: hidden;
   background: $grey;
   color: $white;
-  font-size:16px;
-  border:none;
-  border-radius: 0 .8rem .8rem 0;
+  font-size: 16px;
+  border: none;
+  border-radius: 0 0.8rem 0.8rem 0;
   height: auto;
   width: auto;
   padding: 1rem;
   margin: 1rem 1rem 1rem 0;
-  transition: all .4s cubic-bezier(.67,-.51,.42,1.43);
+  transition: all 0.4s cubic-bezier(.67,-.51,.42,1.43);
   z-index: 11;
-}
 
-.button:hover {
-  font-size:24px;
-  width: auto;
-  padding-left: 3rem;
-  cursor: pointer;
-}
+  &:hover {
+    font-size: 24px;
+    width: auto;
+    padding-left: 3rem;
+    cursor: pointer;
+  }
+  /* =====SIDENAV SHEEN ANIMATION===== */
+  /* this creates the html gradient AFTER class "sidenav" element.*/
+  &::after {
+    content: '';
+    position: absolute;
+    height: 151%;
+    width: 82%;
+    top: -29%;
+    right: 0;
+    bottom: 0;
+    left: -100%;
+    background: linear-gradient(to right,rgba(209,112,60,0),rgba(255,255,255,0.5) 50%,rgba(209,112,60,0));
+    transform: rotate(25deg);
+  }
 
-/* =====BUTTON SHEEN ANIMATION===== */
-/* this creates the html gradient AFTER class "button" element.*/
-.button::after {
-  content:'';
-  position:absolute;
-  height: 151%;
-  width: 82%;
-  top: -29%;
-  right: 0%;
-  bottom: 0%;
-  left: -100%;
-  background:linear-gradient(to right,rgba(209,112,60,0),rgba(255,255,255,0.5) 50%,rgba(209,112,60,0));
-  transform: rotate(25deg);
-}
+  &:hover::after {
+    animation: sheen 0.8s 0.5s;
+  }
 
-.button:hover::after, .button:focus::after {
-  animation: sheen .8s .5s;
+  &:focus::after {
+    animation: sheen 0.8s 0.5s;
+  }
 }
-
 @keyframes sheen {
   100% {
     transform: translate(20rem, 0rem);
   }
 }
-
 /* =============FOOTER============= */
-
 footer {
   height: 15vh;
   position: relative;
@@ -258,3 +263,6 @@ footer {
   border: 2px solid blue;
   background-color: darkgreen;
 }
+// ==========DEV NOTES==========
+// SASS reconnected. Create component.scss file. Then @import it via a styles.scss file.
+// Preloader prevents hover animations when at the top of the z-index. How to fix while keeping it at the top of the z-index?

@@ -18,8 +18,8 @@ var makeItRain = function() {
     //add in a new raindrop with various randomizations to certain CSS properties
     drops += '<div class="drop" style="left: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: .9' + randoHundo + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: .9' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div></div>';
   }
-  $('.rainElement').append(drops);
-  $('.backRain').append(drops);
+  $('.rainContainer__front').append(drops);
+  $('.rainContainer__back').append(drops);
 }
 makeItRain();
 
