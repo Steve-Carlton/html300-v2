@@ -1,0 +1,20 @@
+how to list an coding languages that are in an array as a property value of an object?
+
+list code language values from an array of different lengths
+
+
+counter for an array
+
+for
+
+array
+array.length
+
+i++
+
+
+how do i give the codeLanguages value (array) a variable name?
+
+object
+property name : property value
+

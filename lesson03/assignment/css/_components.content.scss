@@ -1,17 +1,194 @@
+//
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *:after,
 *:before {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 .main {
-    padding: 2rem;
+  padding: 2rem;
 }
 
+.card__container, .template-hook {
+  margin-bottom: 2rem;
+}
+// ========TYPE STYLES========
 h1 {
-    color: $red;  
+  font-size: 1.75rem;
+  margin-top: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+span {
+  color: $charcoal;
+}
+
+h3,
+h4 {
+  display: inline;
+  line-height: 2.5rem;
+}
+
+h2,
+h4 {
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 0;
+}
+// ========FLEX BOX========
+.card {
+  &__container {
+    background-color: $gray;
+    border: 1px solid $slate;
+    border-radius: 5px;
+    padding: 3rem;
+  }
+
+  &__entry {
+    display: flex;
+    flex-flow: nowrap;
+    justify-content: center;
+    background-color: $white;
+    padding: 2.5rem;
+  }
+
+  &__identity {
+    padding: 0;
+    margin: 0 2rem 0 0;
+    text-align: center;
+
+    & img {
+      border-radius: 50%;
+      width: auto;
+      max-width: 15rem;
+      min-width: 8rem;
+    }
+  }
+}
+
+.card {
+  &__profile {
+  background-color: $gray;
+  margin: 0;
+  padding: 0.5rem 2rem 2rem;
+  flex-grow: 1.5;
+  }
+  &__list {
+    margin-top: 4%;
+    margin-bottom: 4%;
+    padding: 0;
+    list-style: none;
+    padding-inline-start: 0;
+  }
+}
+
+.code__aside {
+  background-color: aliceblue;
+  border-radius: 2%;
+  border: 2px solid $slate;
+  padding: 0.5rem 1rem 2rem;
+  flex-grow: 1;
+}
+
+// ========PERSON URL========
+.contact {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0 0;
+}
+
+.icon {
+  border-radius: 0;
+  height: 35px;
+  width: 35px;
+}
+
+span {
+  padding-left: 0.5rem;
+}
+
+// ========MEDIA QUERIES========
+@media screen and (max-width: 966px) {
+//tablet sizes — vertical orientation
+  .card {
+    &__entry {
+      flex-flow: column;
+      justify-content: center;
+    }
+    &__identity {
+      width: 100%;
+      margin: 0;
+    }
+    &__profile {
+      margin-top: 1rem;
+    }
+  }
+}
+//scale elements down
+@media screen and (max-width: 499px) {
+  .main {
+    padding: 0.2rem;
+  }
+  .card {
+  &__container {
+    padding: 2rem;
+  }
+  &__entry {
+    padding: 1.5rem;
+    width: auto;
+  }
+  &__identity {
+    width: 100%;
+    margin: 0;
+  }
+  }
+
+//vertical stack linkedin logo and URL
+  .contact {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .contact span {
+        margin-top: 1rem;
+  }
+}
+
+//small devices
+@media screen and (max-width: 340px) {
+  .card {
+    &__identity img {
+    width: 100%;
+    max-width: 15rem;
+    min-width: 8rem;
+  }
+  &__profile {
+    padding: .25rem .75rem .75rem;
+    margin: .25rem 0 0 0;
+  }
+}
+ul {
+  margin: 0;
+  padding: 0
+}
+  h1 {
+    margin-top: .5rem;
+  }
+  h3, h4, .contact span {
+    font-size: 75%;
+    line-height: 1.5rem;
+  }
+  .contact span {
+    padding-left: .25rem;
+  }
 }
