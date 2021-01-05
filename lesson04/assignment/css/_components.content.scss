@@ -1,0 +1,259 @@
+* {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* ==========BODY========== */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: sans-serif;
+  overflow: hidden;
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,51,74,1) 150%);
+}
+
+header {
+  height: 20vh;
+  border: 2px solid red;
+  background-color: navy;
+  position: relative;
+  z-index: 100;
+}
+
+/* ==========PRELOADER========== */
+.preloader {
+  display: flex;
+  position: fixed;
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,51,74,1) 150%);
+  height: 85vh;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  bottom: 0;
+  /* Below delay added for viewing purposes only */
+  transition: opacity 0.5s 5s linear;
+  width: 100%;
+  z-index: 10;
+}
+/* ==========DOT BOUNCE ANIMATION========== */
+.circle {
+  position: relative;
+  height: .5rem;
+  width: .5rem;
+  border-radius: 50%;
+  background: #5E66AE;
+  margin: .35rem;
+  animation: bounceyPreload 1.2s ease-in-out infinite;
+
+/* SASS nesting syntax not working. SASS not connected. Create component.scss file. Then @import it into styles.scss files. */
+  &:nth-of-type(1) {
+    animation-delay: 0;
+  }
+  &:nth-of-type(2) {
+    animation-delay: 150ms;
+  }
+  &:nth-of-type(3) {
+    animation-delay: 300ms;
+  }
+  &:nth-of-type(4) {
+    animation-delay: 450ms;
+  }
+}
+
+@keyframes bounceyPreload {
+  0% {
+    bottom: 0;
+    background-color: #5E66AE;
+  }
+  15% {
+    background-color: #5E66AE;
+  }
+  20% {
+    bottom: -.5rem;
+  }
+  30% {
+    background-color: #5E66AE;
+  }
+  40% {
+    bottom: .75rem;
+  }
+  45% {
+    background-color: #00FFEB;
+    box-shadow: 0 0 8px #00FFEB;
+  }
+  80% {
+    background-color: #5E66AE;
+  }
+  100% {
+    bottom: 0;
+    background-color: #5E66AE;
+  }
+}
+
+/* =============CORE RAIN ANIMATION============= */
+.drop {
+  position: absolute;
+  bottom: 100%;
+  width: 15px;
+  height: 120px;
+  pointer-events: none;
+  animation: drop 0s linear infinite;
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(0vh);
+  }
+
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+.stem {
+  width: 2px;
+  height: 60%;
+  transform: rotate(15deg);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25));
+  animation: stem 0s linear infinite;
+}
+
+@keyframes stem {
+  0% {
+    opacity: 1;
+  }
+  65% {
+    opacity: .75;
+    background: grey;
+  }
+  70% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* =============RAIN ELEMENTS============= */
+
+.rainContainer {
+  position: absolute;
+  height: 65vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.rainElement {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 65vh;
+  opacity: .5;
+  /* border: 2px dotted green; */
+}
+
+ .backRain {
+  position: absolute;
+  display: block;
+  width: 90%;
+  height: 65vh;
+  bottom: 20vh;
+  /* right: 2vw; */
+  /* border: 2px dotted yellow; */
+  opacity: .25;
+}
+
+/* ==========MAIN SITE CONTENT========== */
+.main {
+  height: 65vh;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+  border: 2px solid magenta;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__map {
+  width: 10rem;
+  height: 10rem;
+  border: 2px solid green;
+  background-color: green;
+  z-index: 2;
+}
+
+
+.main__list {
+  width: 10rem;
+  height: 10rem;
+  color: white;
+  border: 2px solid purple;
+}
+
+.button {
+  display: block;
+  position:absolute;
+  overflow:hidden;
+  background:grey;
+  color:#fff;
+  font-size:16px;
+  border:none;
+  border-radius: 0 .8rem .8rem 0;
+  height: auto;
+  width: auto;
+  padding: 1rem;
+  margin: 1rem 1rem 1rem 0;
+  transition: all .4s cubic-bezier(.67,-.51,.42,1.43);
+  z-index: 11;
+}
+
+.button:hover {
+  font-size:24px;
+  width: auto;
+  padding-left: 3rem;
+  cursor: pointer;
+}
+
+/* =====BUTTON SHEEN ANIMATION===== */
+/* this creates the html gradient AFTER class "button" element.*/
+.button::after {
+  content:'';
+  position:absolute;
+  height: 151%;
+  width: 82%;
+  top: -29%;
+  right: 0%;
+  bottom: 0%;
+  left: -100%;
+  background:linear-gradient(to right,rgba(209,112,60,0),rgba(255,255,255,0.5) 50%,rgba(209,112,60,0));
+  transform: rotate(25deg);
+}
+
+.button:hover::after, .button:focus::after {
+  animation: sheen .8s .5s;
+}
+
+@keyframes sheen {
+  100% {
+    transform: translate(20rem, 0rem);
+  }
+}
+
+/* =============FOOTER============= */
+
+footer {
+  height: 15vh;
+  position: relative;
+  z-index: 2;
+  border: 2px solid blue;
+  background-color: darkgreen;
+}
