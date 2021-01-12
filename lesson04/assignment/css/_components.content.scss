@@ -1,0 +1,268 @@
+* {
+  box-sizing: border-box;
+  text-align: center;
+  //mixin font stack test
+  @include font-stack-brand;
+}
+/* ==========BODY========== */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  overflow: hidden;
+  background: $black;
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,51,74,1) 150%);
+}
+
+header {
+  height: 20vh;
+  border: 2px solid red;
+  background-color: navy;
+  position: relative;
+  z-index: 100;
+}
+/* ==========PRELOADER========== */
+// this prevents hover animations on homepage. z-index value lowered.
+
+.preloader {
+  display: flex;
+  position: fixed;
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,51,74,1) 150%);
+  height: 85vh;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  bottom: 0;
+  /* Below delay added for viewing purposes only */
+  transition: opacity 0.5s 1.5s linear;
+  width: 100%;
+  z-index: 10;
+  /* ==========DOT ANIMATION========== */
+  &__dot {
+    position: relative;
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 50%;
+    background: $stormblue;
+    margin: 0.35rem;
+    animation: dotPreload 1.2s ease-in-out infinite;
+
+    &:nth-of-type(1) {
+      animation-delay: 0;
+    }
+
+    &:nth-of-type(2) {
+      animation-delay: 150ms;
+    }
+
+    &:nth-of-type(3) {
+      animation-delay: 300ms;
+    }
+
+    &:nth-of-type(4) {
+      animation-delay: 450ms;
+    }
+  }
+}
+@keyframes dotPreload {
+  0% {
+    bottom: 0;
+    background-color: $stormviolet;
+  }
+
+  15% {
+    background-color: $stormviolet;
+  }
+
+  20% {
+    bottom: -.5rem;
+  }
+
+  30% {
+    background-color: $stormviolet;
+  }
+
+  40% {
+    bottom: 0.75rem;
+  }
+
+  45% {
+    background-color: $cyan;
+    box-shadow: 0 0 8px $cyan;
+  }
+
+  80% {
+    background-color: $stormviolet;
+  }
+
+  100% {
+    bottom: 0;
+    background-color: $stormviolet;
+  }
+}
+/* =============CORE RAIN ANIMATION============= */
+.drop {
+  position: absolute;
+  bottom: 100%;
+  width: 15px;
+  height: 120px;
+  pointer-events: none;
+  animation: drop 0s linear infinite;
+}
+@keyframes drop {
+  0% {
+    transform: translateY(0vh);
+  }
+
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+.stem {
+  width: 2px;
+  height: 60%;
+  transform: rotate(15deg);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25));
+  animation: stem 0s linear infinite;
+}
+@keyframes stem {
+  0% {
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 0.75;
+    background: $grey;
+  }
+
+  70% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+/* =============RAIN ELEMENTS============= */
+.rainContainer {
+  position: absolute;
+  height: 65vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  &__front {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 65vh;
+    opacity: 0.5;
+    /* border: 2px dotted green; */
+  }
+
+  &__back {
+    position: absolute;
+    display: block;
+    width: 90%;
+    height: 65vh;
+    bottom: 20vh;
+    /* right: 2vw; */
+    /* border: 2px dotted yellow; */
+    opacity: 0.25;
+  }
+}
+/* ==========MAIN SITE CONTENT========== */
+.main {
+  height: 65vh;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+  border: 2px solid magenta;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__map {
+  width: 10rem;
+  height: 10rem;
+  border: 2px solid green;
+  background-color: green;
+  z-index: 2;
+}
+
+.main__list {
+  width: 10rem;
+  height: 10rem;
+  color: white;
+  border: 2px solid purple;
+}
+
+.sidenav {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  background: $grey;
+  color: $white;
+  font-size: 16px;
+  border: none;
+  border-radius: 0 0.8rem 0.8rem 0;
+  height: auto;
+  width: auto;
+  padding: 1rem;
+  margin: 1rem 1rem 1rem 0;
+  transition: all 0.4s cubic-bezier(.67,-.51,.42,1.43);
+  z-index: 11;
+
+  &:hover {
+    font-size: 24px;
+    width: auto;
+    padding-left: 3rem;
+    cursor: pointer;
+  }
+  /* =====SIDENAV SHEEN ANIMATION===== */
+  /* this creates the html gradient AFTER class "sidenav" element.*/
+  &::after {
+    content: '';
+    position: absolute;
+    height: 151%;
+    width: 82%;
+    top: -29%;
+    right: 0;
+    bottom: 0;
+    left: -100%;
+    background: linear-gradient(to right,rgba(209,112,60,0),rgba(255,255,255,0.5) 50%,rgba(209,112,60,0));
+    transform: rotate(25deg);
+  }
+
+  &:hover::after {
+    animation: sheen 0.8s 0.5s;
+  }
+
+  &:focus::after {
+    animation: sheen 0.8s 0.5s;
+  }
+}
+@keyframes sheen {
+  100% {
+    transform: translate(20rem, 0rem);
+  }
+}
+/* =============FOOTER============= */
+footer {
+  height: 15vh;
+  position: relative;
+  z-index: 2;
+  border: 2px solid blue;
+  background-color: darkgreen;
+}
+// ==========DEV NOTES==========
+// SASS reconnected. Create component.scss file. Then @import it via a styles.scss file.
+// Preloader prevents hover animations when at the top of the z-index. How to fix while keeping it at the top of the z-index?
