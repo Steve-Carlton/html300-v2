@@ -16,5 +16,8 @@
         "gulp-plumber": "1.2.0",
         "gulp-sass": "4.0.2",
         "gulp-util": "3.0.8"
+    },
+    "dependencies": {
+        "npm": "^6.14.11"
     }
 }
