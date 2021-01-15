@@ -1,6 +1,5 @@
 // ==========DEV NOTES==========
 // Add Lorem text and images
-
 *,
 *:after,
 *:before {
@@ -36,13 +35,56 @@ body {
   "footer footer footer footer";
 }
 
-header {
-  border: 2px solid $red;
+.header {
+  border: 8px solid $red;
   background-color: $red;
+  background-image: url("https://picsum.photos/1200/800");
+  background-size: cover;
   grid-area: header;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+    h1 {
+      color: $white;
+      position: relative;
+      left: 1.5rem;
+      font:{
+        family: $font-fam;
+        size: 6rem;
+        style: italic;
+        weight: 700;
+      }
+      text: {
+        decoration: none;
+        shadow: 2px 2px 5px black;
+      }
+    }
+    &__logo {
+      position: relative;
+      left: 5%;
+      color: $white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: teal;
+      border-radius: 50%;
+      width: 7rem;
+      height: 7rem;
+    }
+    &__info {
+      position: relative;
+      right: 5%;
+      color: $white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+      border-radius: 1rem;
+      border: 1px solid grey;
+      width: 10rem;
+      height: 5rem;
+    }
 }
 
 nav {
@@ -53,7 +95,14 @@ nav {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
   padding: 1rem;
+
+  & a h2 {
+    padding: .5rem;
+    background-color: grey;
+    border-radius: 5%;
+  }
 }
 
 .main {
@@ -102,10 +151,32 @@ nav {
 footer {
   border: 2px solid $blue;
   background-color: $blue;
+  background-image: url("https://picsum.photos/1200/800");
+  background-size: cover;
   grid-area: footer;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+    & h2 {
+      font:{
+      family: $font-fam;
+      size: 4rem;
+      style: italic;
+      weight: 700;
+    }
+    text: {
+      decoration: none;
+      shadow: 2px 2px 5px black;
+    }
+  }
+  & address {
+    color: $white;
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: .5rem;
+    padding: 1rem;
+  }
 }
 // ==========MEDIA QUERIES==========
 //MOBILE
@@ -129,7 +200,7 @@ footer {
   nav {
     flex-direction: column;
 
-    & a {
+    & a h2 {
       font-size: 1rem;
     }
   }
@@ -159,7 +230,7 @@ footer {
     flex-direction: column;
   }
 
-  nav a {
+  nav a h2 {
     font-size: 1rem;
   }
 
@@ -173,7 +244,7 @@ footer {
     // background-color: black;
   }
 
-  nav a {
+  nav a h2{
     font-size: 1rem;
   }
 
@@ -196,7 +267,7 @@ footer {
     // background-color: grey;
   }
 
-  nav a {
+  nav a h2{
     font-size: 1.5rem;
   }
 }
@@ -208,7 +279,7 @@ footer {
 
   h1,
   h2,
-  nav a {
+  nav a h2{
     font-size: 2rem;
   }
 }
