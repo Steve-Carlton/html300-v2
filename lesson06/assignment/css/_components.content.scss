@@ -40,14 +40,50 @@ html {
   }
 
 }
+
 .jumbotron {
-  position: relative;
+  margin-top: 2rem;
+  border-bottom: 40px solid #00c3a899;
+  border-left: 40px solid #4b00c399;
 }
 
-button a {
-  color: white;
+.container-fluid.jt2 {
+    margin-bottom: 9vh;
 }
 
+
+.letsGo-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1rem;
+  margin-bottom: -4rem;
+}
+
+.letsGo-button button {
+  height: 4rem;
+  width: 10rem;
+}
+//
+// .jt1:before {
+//   background-color: #c800b0;
+//   position: absolute;
+//   opacity: .2;
+//   top: 0px;
+//   left: 0%;
+//   content: '';
+//   width: 100%;
+//   height: 100%;
+//   border-left: 50px solid transparent;
+//   border-top: 500px solid teal;
+//
+// }
+
+@media (min-width: 576px) {
+div.jumbotron.jumbotron-fluid {
+    padding: 4rem 2rem 2rem;
+  }
+}
 .main {
+  margin-top: 1rem;
   grid-area: main;
 }
