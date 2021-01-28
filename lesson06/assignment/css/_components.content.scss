@@ -8,6 +8,46 @@ html {
     box-sizing: inherit;
 }
 
+.index {
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer"
+}
+
+
+
+.header {
+  grid-area: header;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 2px solid red;
+  &__logo {
+    position: relative;
+    left: 0%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: teal;
+    border-radius: 50%;
+    width: 7rem;
+    height: 7rem;
+  }
+
+}
+.jumbotron {
+  position: relative;
+}
+
+button a {
+  color: white;
+}
+
 .main {
-    padding: 2rem;
+  grid-area: main;
 }
