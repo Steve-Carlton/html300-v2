@@ -1,0 +1,12 @@
+// Import partials here
+@import 'base.normalize';
+@import 'settings.variables';
+@import 'settings.responsive';
+
+
+// Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+//no bootstrap directory exists
+
+// Custom CSS
+@import 'components.content';

@@ -1,0 +1,22 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+.main {
+    padding: 2rem;
+}
+
+.b1 {
+  cursor: pointer;
+}
+
+.btnReady {
+  cursor: pointer;
+  opacity: 100%;
+}
