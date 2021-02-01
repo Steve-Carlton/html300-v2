@@ -10,35 +10,30 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/84f686cd67.js" crossorigin="anonymous"></script>
     <title>home</title>
   </head>
-  <body>
-    <header class="header">
-        <div class="header__logo">logo</div>
-        <h1>Seattle Playgrounds</h1>
+  <body class="container-fluid">
+    <!-- HEADER -->
+    <header class="row header">
+      <div class="header__logo">logo</div>
+      <h1 class='header__title'>Seattle Playgrounds</h1>
     </header>
 
     <!-- NAVBAR -->
-    <nav class="topnav bg-primary">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-1">
-            icon
-          </div>
-          <div class="col-2">
-            home
-          </div>
-          <div class="col-2">
-            content
-          </div>
-          <div class="col-2">
-            about
-          </div>
-          <div class="col">
-            lastone
-          </div>
-        </div>
-      </div>
+    <nav class="row topnav bg-warning">
+      <a class="col-sm-auto" href="#">
+        <h2 id="homeIcon">home</h2>
+      </a>
+      <a class="col-sm-auto">
+        <h2>content</h2>
+      </a>
+      <a class="col-sm-auto">
+        <h2>about</h2>
+      </a>
+      <a class="col-sm-auto">
+        <h2>social</h2>
+      </a>
     </nav>
     <main class="main">
 
@@ -46,9 +41,11 @@
       <div class="container jt1">
         <div class="jumbotron jumbotron-fluid">
           <div class="container">
-            <h1 class="display-4">Your newest little parenting-hack.</h1>
-            <p class="lead">Spread the love.</p>
-            <p>Tell a friend, twitter link here. Cheers, @SeattlePGs</p>
+            <h1 class="display-4">Your newest little lifehack.</h1>
+            <span class="lead">Spread the love.</span>
+            <p><i class="fab fa-twitter fa-5x twitterCTA"></i></p>
+            <a href="https://twitter.com/intent/tweet?button_hashtag=SeattlePGs&ref_src=twsrc%5Etfw" class="twitterIcon twitter-hashtag-button" data-size="large" data-text="Hi! I just discovered Seattle&#39;s best resource for local playgrounds!" data-related="" data-show-count="false">Tweet #SeattlePGs</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <p class='twitterIcon'>Be a smartypants & help this project! It's a win-win. Go on and tweet about it!</p>
           </div>
         </div>
       </div>
@@ -56,8 +53,13 @@
     </main>
 
 
-    <footer>
 
+      <!-- FOOTER -->
+    <footer class="row footer">
+      <div class="col-12">
+        <div class="header__logo">logo</div>
+        <h1>Seattle Playgrounds</h1>
+      </div>
     </footer>
 
 
