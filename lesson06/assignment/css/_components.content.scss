@@ -29,7 +29,29 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: teal;
+    background-color: #00c3a899;
+    border-radius: 50%;
+    width: 7rem;
+    height: 7rem;
+
+  }
+  &__title {
+    margin: auto;
+  }
+}
+
+.footer {
+  grid-area: footer;
+  padding: 1rem;
+  border: 2px solid red;
+  &__logo {
+    position: relative;
+    left: 0%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00c3a899;
     border-radius: 50%;
     width: 7rem;
     height: 7rem;
@@ -41,13 +63,13 @@ html {
 }
 
 @media only screen and (max-width: 510px) {
-  .header__logo {
+  .header__logo, .footer__logo {
     width: 4rem;
     height: 4rem;
   }
 }
 @media only screen and (max-width: 460px) {
-  .header {
+  .header, .footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,21 +83,23 @@ html {
 }
 // ~~~~~NAV~~~~~
 nav a {
-  border: 1px solid black;
+  border-left: 1px solid grey;
+  border-bottom: 1px solid grey;
+  border-top: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
   border-radius: 10px;
   margin: 1rem;
 }
 @media only screen and (max-width: 474px) {
-  nav {
+  nav ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
   }
 
-  nav a {
-    width: 90%;
+  .nav-item a {
+    text-align: center;
+    width: 95%;
     margin: .5rem;
   }
 }
