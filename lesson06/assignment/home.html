@@ -15,8 +15,10 @@
 
     <!-- HEADER -->
     <header class="row header">
-      <div class="header__logo">logo</div>
-      <h1 class='header__title'>Seattle Playgrounds</h1>
+      <div class='header__lockup'>
+        <div class="header__lockup__logo">logo</div>
+        <h1 class='header__lockup__title'>Seattle Playgrounds</h1>
+      </div class='header__lockup'>
     </header>
 
     <!-- NAVBAR -->
@@ -35,6 +37,11 @@
         <li class="nav-item">
           <a class="nav-link" href="#">social</a>
         </li>
+        <li class="nav-item">
+          <button class="btn btn-info nav-link" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" data-toggle="tooltip" data-placement="bottom" title="Click to Show/Hide">
+            Spread the love!
+          </button>
+        </li>
       </ul>
     </nav>
 
@@ -45,9 +52,29 @@
       <a class="nav-link text-light" href="#">social</a>
     </nav> -->
     <main class="main">
+      <!-- JUMOBTRON 1 CTA generic twitter button-->
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body container jt1">
+          <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4">Your newest little lifehack.</h1>
+              <span class="lead">Spread the love.</span>
+              <p><i class="fab fa-twitter fa-5x twitterCTA"></i></p>
+              <a href="https://twitter.com" target="blank"><button class="btn btn-primary">Tweet</button></a>
+              <a href="https://twitter.com/intent/tweet?button_hashtag=SeattlePGs&ref_src=twsrc%5Etfw" class="twitterIcon twitter-hashtag-button" data-size="large" data-text="Hi! I just discovered Seattle&#39;s best resource for local playgrounds!" data-related="" data-show-count="false">Tweet #SeattlePGs</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              <p class='twitterIcon'>Want to be a smartypants and help this project? Go on and tweet about it!  It's a win-win! ;D</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <!-- JUMOBTRON 1 CTA -->
-      <div class="container jt1">
+      <section>
+        <!-- map
+        list -->
+      </section>
+
+      <!-- JUMOBTRON 1 CTA w/ custom twitter #button-->
+      <!-- <div class="container jt1">
         <div class="jumbotron jumbotron-fluid">
           <div class="container">
             <h1 class="display-4">Your newest little lifehack.</h1>
@@ -57,7 +84,7 @@
             <p class='twitterIcon'>Want to be a smartypants and help this project? Go on and tweet about it!  It's a win-win.</p>
           </div>
         </div>
-      </div>
+      </div> -->
 
     </main>
 
@@ -65,8 +92,10 @@
 
       <!-- FOOTER -->
     <footer class="row footer">
-        <div class="header__logo">logo</div>
-        <h1 class='header__title'>Seattle Playgrounds</h1>
+      <div class='footer__lockup'>
+        <div class="footer__lockup__logo">logo</div>
+        <h1 class='footer__lockup__title'>Seattle Playgrounds</h1>
+      </div class='footer__lockup'>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
