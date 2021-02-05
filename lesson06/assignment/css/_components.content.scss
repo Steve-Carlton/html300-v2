@@ -97,9 +97,6 @@ nav a, nav button {
 }
 
 #homeIcon {
-  // position: relative;
-  // left: 1rem;
-  // top: .9rem;
   cursor: pointer;
   color: white;
   display: flex;
@@ -162,11 +159,28 @@ text-align: center;
   text-align: center;
 }
 
+.letsGoBox {
+    display: flex;
+    justify-content: flex-end;
+}
 .letsGo-button {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 1rem;
-  margin-bottom: -4rem;
+    display: flex;
+    justify-content: center;
+    margin-right: 5rem;
+    color: white;
+    background-color: #007bff;
+    text-align: center;
+    height: 4rem;
+    width: 10rem;
+    float: right;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.letsGo-button a {
+    color: white;
+    text-decoration: none;
+    height: 2rem;
 }
 
 .letsGo-button button {
@@ -178,7 +192,7 @@ text-align: center;
   width: 100%;
 }
 
-section {
+.about {
   background-image: url('../img/thom-milkovic-skUTVJi8-jc-unsplash_bg.jpg');
   background-size: cover;
   position: relative;
@@ -240,6 +254,14 @@ section {
       margin: 0;
     }
 
+  }
+
+  .accordion {
+    color: black;
+
+    & h2 {
+      color: white;
+    }
   }
 
 
