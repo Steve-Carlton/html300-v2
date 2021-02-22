@@ -1,8 +1,10 @@
-<template>  
+<template>
 <div id="app">
   <bannerTop v-bind:brandTitle="brandTitle"></bannerTop>
   <navbar></navbar>
-
+  <main>
+    <jumbotron></jumbotron>
+  </main>
 </div>
 </template>
 
@@ -11,11 +13,12 @@
 // import filename and path
 import BannerTop from './components/BannerTop.vue'
 import navbar from './components/Navbar.vue'
+import jumbotron from './components/Jumbotron.vue'
 
 // ###### VUE.js
 export default {
   el: '#app',
-  components: {BannerTop, navbar},//filename of new component
+  components: {BannerTop, navbar, jumbotron},//filename of new component
   data() {
     return {
       brandTitle: "Seattle Playgrounds" //content of prop branTitle of bannerTop tag
@@ -44,5 +47,7 @@ html, body {
   background-color: ivory;
 }
 
-
+main {
+  border: 2px solid green;
+}
 </style>
