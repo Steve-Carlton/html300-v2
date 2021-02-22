@@ -1,6 +1,7 @@
-<template>
+<template>  
 <div id="app">
   <bannerTop v-bind:brandTitle="brandTitle"></bannerTop>
+  <navbar></navbar>
 
 </div>
 </template>
@@ -9,11 +10,12 @@
 // ###### Link to Component File ######
 // import filename and path
 import BannerTop from './components/BannerTop.vue'
+import navbar from './components/Navbar.vue'
 
 // ###### VUE.js
 export default {
   el: '#app',
-  components: {BannerTop}, //filename of new component
+  components: {BannerTop, navbar},//filename of new component
   data() {
     return {
       brandTitle: "Seattle Playgrounds" //content of prop branTitle of bannerTop tag

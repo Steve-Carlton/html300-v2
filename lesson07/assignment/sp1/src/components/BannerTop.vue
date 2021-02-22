@@ -1,10 +1,10 @@
 <template>
-  <header>
-    <div class="container">
-      <div class="logo">
+  <header class="header">
+    <div class="header__container">
+      <div class="header__container__logo">
         <p>logo</p>
       </div>
-      <h1>{{ brandTitle }}</h1>
+      <h1 class="header__container__brandTitle">{{ brandTitle }}</h1>
     </div>
   </header>
 </template>
@@ -22,21 +22,22 @@ export default {
 }
 </script>
 
-<style>
-  header {
+<style scoped>
+  .header {
     padding: 2rem;
     border: 2px solid magenta;
     margin: 0;
-  }
 
-  .container {
+  }
+  .header__container {
     display: flex;
     align-items: center;
     text-align: center;
-    justify-content: space-around;
+    justify-content: center;
   }
 
-  .logo {
+
+  .header__container__logo {
     height: 8rem;
     width: 8rem;
     padding: 3rem;
@@ -55,5 +56,24 @@ export default {
 
   h1 {
     margin: auto;
+  }
+
+  @media only screen and (max-width: 400px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header__container {
+    flex-direction: column;
+  }
+
+  .header__container__logo {
+      width: 7rem;
+      height: 7rem;
+    }
   }
 </style>
