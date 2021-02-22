@@ -1,8 +1,13 @@
 <template>
 <div id="app">
+  <!-- v-binds the prop to tag. the '=' assigns the text interpolation -->
   <bannerTop v-bind:brandTitle="brandTitle"></bannerTop>
+
   <navbar></navbar>
   <main>
+    <jumbotron v-bind:jumboCopy="jumboCopy" :jumboTagline="jumboTagline" :jumboSubTag="jumboSubTag"></jumbotron>
+
+
     <jumbotron></jumbotron>
   </main>
 </div>
@@ -21,7 +26,13 @@ export default {
   components: {BannerTop, navbar, jumbotron},//filename of new component
   data() {
     return {
-      brandTitle: "Seattle Playgrounds" //content of prop branTitle of bannerTop tag
+      brandTitle: "Seattle Playgrounds", //content of prop branTitle of bannerTop tag
+      jumboTagline: "Your newest little lifehack.",
+      jumboSubTag: "Spread the Love!",
+      // jumboGraphics: []
+      jumboCopy: "Hey smartypants! Want to be awesome and help this project? Go on and tweet about it! It's simple, it's easy, and it's a win-win! ;D",
+
+
     }
 
   }

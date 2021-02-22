@@ -1,13 +1,14 @@
 <template>
   <section>
-    <h2>Your newest little lifehack.</h2>
-    <h3 class="lead">Spread the love.</h3>
-    <div class="CTAcontainer">
-      <p><i class="fab fa-twitter fa-5x twitterCTA"></i></p>
-      <a href="https://twitter.com/intent/tweet?button_hashtag=SeattlePGs&ref_src=twsrc%5Etfw" class="twitterIcon twitter-hashtag-button" data-size="large" data-text="Hi! I just discovered Seattle&#39;s best resource for local playgrounds!" data-related="" data-show-count="false">Tweet #SeattlePGs</a>
-    </div>
-    <p>Hey smartypants! Want to be awesome and help this project? Go on and tweet about it! It's simple, it's easy, and it's a win-win! ;D</p>
+    <h2>{{jumboTagline}}</h2>
+    <h3 class="lead">{{jumboSubTag}}</h3>
+    <div class="CTAcontainer"> {{jumboGraphics}}</div>
+    <p>{{ jumboCopy }}</p>
+    
   </section>
+<!-- ##### Twitter graphic/button below -->
+  <!-- <p><i class="fab fa-twitter fa-5x twitterCTA"></i></p>
+  <a href="https://twitter.com/intent/tweet?button_hashtag=SeattlePGs&ref_src=twsrc%5Etfw" class="twitterIcon twitter-hashtag-button" data-size="large" data-text="Hi! I just discovered Seattle&#39;s best resource for local playgrounds!" data-related="" data-show-count="false">Tweet #SeattlePGs</a> -->
 </template>
 
 <script>
@@ -15,6 +16,10 @@
 export default {
   name: 'jumbotron',//name of file, component, html tag
   props: {
+    jumboTagline: String,
+    jumboSubTag: String,
+    jumboGraphics: String,
+    jumboCopy: String,
     //my prop name : data type
     // can also list names
     // try an array
