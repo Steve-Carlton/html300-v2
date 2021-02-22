@@ -9,6 +9,11 @@
 
 
     <jumbotron></jumbotron>
+
+    <todoitem v-for="item in groceryList"
+      v-bind:todo="item"
+      v-bind:key="item.id">{{todoitem}}
+    </todoitem>
   </main>
 </div>
 </template>
@@ -19,11 +24,12 @@
 import BannerTop from './components/BannerTop.vue'
 import navbar from './components/Navbar.vue'
 import jumbotron from './components/Jumbotron.vue'
+import todoitem from './components/todoitem.vue'
 
 // ###### VUE.js
 export default {
   el: '#app',
-  components: {BannerTop, navbar, jumbotron},//filename of new component
+  components: {BannerTop, navbar, jumbotron, todoitem},//filename of new component
   data() {
     return {
       brandTitle: "Seattle Playgrounds", //content of prop branTitle of bannerTop tag
@@ -32,6 +38,11 @@ export default {
       // jumboGraphics: []
       jumboCopy: "Hey smartypants! Want to be awesome and help this project? Go on and tweet about it! It's simple, it's easy, and it's a win-win! ;D",
 
+      groceryList: [//this is an objects
+   { id: 0, text: 'Vegetables' },
+   { id: 1, text: 'Cheese' },
+   { id: 2, text: 'Whatever else humans are supposed to eat' }
+ ]
 
     }
 
