@@ -1,12 +1,12 @@
 <template>
   <section>
-    <h2>{{jumboTagline}}</h2>
-    <h3 class="lead">{{jumboSubTag}}</h3>
-    <div class="CTAcontainer"> {{jumboGraphics}}</div>
-    <p>{{ jumboCopy }}</p>
-    
+    <h2>{{jumboprop.jumboTagline}}</h2>
+    <h3 class="lead">{{jumboprop.jumboSubTag}}</h3>
+    <div class="CTAcontainer"> {{jumboprop.jumboGraphics}}</div>
+    <p>{{ jumboprop.jumboCopy }}</p>
+
   </section>
-<!-- ##### Twitter graphic/button below -->
+  <!-- ##### how to include below block for jumboGraphics? -->
   <!-- <p><i class="fab fa-twitter fa-5x twitterCTA"></i></p>
   <a href="https://twitter.com/intent/tweet?button_hashtag=SeattlePGs&ref_src=twsrc%5Etfw" class="twitterIcon twitter-hashtag-button" data-size="large" data-text="Hi! I just discovered Seattle&#39;s best resource for local playgrounds!" data-related="" data-show-count="false">Tweet #SeattlePGs</a> -->
 </template>
@@ -16,13 +16,9 @@
 export default {
   name: 'jumbotron',//name of file, component, html tag
   props: {
-    jumboTagline: String,
-    jumboSubTag: String,
-    jumboGraphics: String,
-    jumboCopy: String,
+    //jumboprop is an object. it is an array item in jumbotronArray
+    jumboprop: String,
     //my prop name : data type
-    // can also list names
-    // try an array
   }
 }
 </script>
