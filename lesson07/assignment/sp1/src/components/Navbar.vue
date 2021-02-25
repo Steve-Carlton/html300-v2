@@ -4,11 +4,11 @@
     <ul class="nav nav-pills">
       <li class="nav-item"><a id="homeIcon" href="#" data-toggle="tooltip" data-placement="bottom" title="Home">index</a></li>
       <li class="nav-item">
-        <a class="nav-link active" href="#">home</a>
+        <router-link to="/" class="nav-link">Home</router-link>
       </li>
-      <!-- file path not equal to route -->
+      <!-- file path not equal to route. This works-->
       <li class="nav-item">
-        <router-link to="/map" class="nav-link">Test</router-link>
+        <router-link to="/map" class="nav-link">Map</router-link>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="./about.html">about</a>
