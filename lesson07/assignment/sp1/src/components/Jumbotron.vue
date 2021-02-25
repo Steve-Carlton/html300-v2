@@ -2,18 +2,17 @@
   <section>
     <h2>{{jumboprop.jumboTagline}}</h2>
     <h3 class="lead">{{jumboprop.jumboSubTag}}</h3>
+    <!-- if jumboGraphics array item present, render on page -->
     <div v-if="jumboprop.jumboGraphics" class="CTAcontainer">
       <a href="https://www.twitter.com/" target="blank"><i class="fab fa-twitter fa-5x twitterCTA"></i></a>
       <a class="button" href="https://www.twitter.com" target="_blank">{{jumboprop.jumboGraphics}}</a>
     </div>
     <p>{{ jumboprop.jumboCopy }}</p>
+    <!-- if jumboButton array item present, render on page -->
+    <!-- use router-link for link to other views -->
+    <div class="jumboButton-container"><router-link class="jumboButton" v-if="jumboprop.jumboButton" to="/map">{{ jumboprop.jumboButton }}</router-link></div>
 
   </section>
-  <!-- ##### how to include below block for jumboGraphics? -->
-  <!-- <p><a href="https://www.twitter.com/" target="blank"><i class="fab fa-twitter fa-5x twitterCTA"></i></a></p><a href="https://twitter.com/intent/tweet?button_hashtag=SeattlePGs&ref_src=twsrc%5Etfw" class="twitterIcon twitter-hashtag-button" data-size="large" data-text="Hi! I just discovered Seattle&#39;s best resource for local playgrounds!" data-related="" data-show-count="false" target="blank"> -->
-
-  <!-- ##### v-if cta ##### -->
-  <!-- v-if="jumbotronArray.id === 0" -->
 </template>
 
 <script>
@@ -59,6 +58,25 @@ export default {
     border-bottom: 3px solid #0a6ca9;
     border-right: 2px solid #0a6ca9;
   }
+
+
+.jumboButton-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 4rem;
+}
+.jumboButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 900;
+  background: #0544ff;
+  border-radius: 8px;
+  width: 8rem;
+  height: 4rem;
+}
+
 
   @media only screen and (max-width: 330px) {
     section {

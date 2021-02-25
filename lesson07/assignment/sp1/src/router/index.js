@@ -1,27 +1,28 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Landing from '../views/Landing.vue'
 import Map from '../views/Map.vue'
+import About from '../views/About.vue'
 Vue.use(VueRouter)
 
+//This is your router file. It's a hub that delivers your views to your Vue app.vue file.
+
 const routes = [
+  // "/" is always the path to home
   {
     path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    name: 'Landing',
+    component: Landing
   },
   {
     path: "/map",
     name: "Map",
     component: Map
+  },
+  {
+    path: "/about",
+    name: "About",
+    component: About
   }
 ]
 

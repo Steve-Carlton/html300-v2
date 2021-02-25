@@ -4,14 +4,15 @@
     <ul class="nav nav-pills">
       <li class="nav-item"><a id="homeIcon" href="#" data-toggle="tooltip" data-placement="bottom" title="Home">index</a></li>
       <li class="nav-item">
-        <router-link to="/" class="nav-link">Home</router-link>
+        <!-- use router-link for link to other views -->
+        <router-link to="/" class="nav-link">Landing</router-link>
       </li>
-      <!-- file path not equal to route. This works-->
+      <!-- "to" value is not a file path. it's a route. see index.js-->
       <li class="nav-item">
         <router-link to="/map" class="nav-link">Map</router-link>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./about.html">about</a>
+        <router-link to="/about" class="nav-link">About</router-link>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">social</a>
@@ -19,6 +20,7 @@
     </ul>
   </nav>
 </template>
+
 <script>
 
 export default {

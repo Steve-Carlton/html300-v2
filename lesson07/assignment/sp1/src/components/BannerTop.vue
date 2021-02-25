@@ -27,6 +27,10 @@ export default {
     padding: 2rem;
     border: 2px solid magenta;
     margin: 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 
   }
   .header__container {
@@ -48,6 +52,7 @@ export default {
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-right: 1rem;
   }
 
   p {

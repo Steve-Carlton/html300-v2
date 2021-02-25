@@ -2,14 +2,8 @@
 <div id="app">
   <!-- v-binds the prop to tag. the '=' assigns the text interpolation -->
   <bannerTop v-bind:brandTitle="brandTitle"></bannerTop>
-  <navbar></navbar>
-
-
-  <main>
-
-  </main>
   <!-- vue router -->
-  <!-- only in app.vue -->
+  <!-- only in app.vue template -->
   <router-view></router-view>
 </div>
 </template>
@@ -18,14 +12,11 @@
 // ###### Link to Component File ######
 // import filename and path
 import BannerTop from './components/BannerTop.vue'
-import navbar from './components/Navbar.vue'
-
-
 
 // ###### VUE.js
 export default {
   el: '#app',
-  components: {BannerTop, navbar},//filename of new component
+  components: {BannerTop},//filename of new and used components
   data() {
     return {
       brandTitle: "Seattle Playgrounds", //content of prop brandTitle of bannerTop tag

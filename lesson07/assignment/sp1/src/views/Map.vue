@@ -1,8 +1,26 @@
 <template>
-  <div>
-    <h2>Map</h2>
-  </div>
+  <main>
+    <navbar></navbar>
+    <section class="mapContainer"><h2 class="map">Map</h2></section>
+  </main>
 </template>
+
+<script>
+//import components
+import navbar from '../components/Navbar.vue'
+
+export default {
+  el: 'Map',
+  components: { navbar },//filename of new and used component
+  data() {
+    return {
+    }
+  }
+
+  // ###### methods: {}
+
+}
+</script>
 
 <style scoped>
 
@@ -22,5 +40,26 @@ html, body {
 
 main {
   border: 2px solid teal;
+
+}
+
+.mapContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10%;
+}
+
+.map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 8rem;
+  height: 8rem;
+  color: white;
+  background: blue;
+  margin: 1rem, auto;
 }
 </style>
