@@ -2,15 +2,18 @@
   <section>
     <h2>{{jumboprop.jumboTagline}}</h2>
     <h3 class="lead">{{jumboprop.jumboSubTag}}</h3>
-    <div class="CTAcontainer">
+    <div v-if="jumboprop.jumboGraphics" class="CTAcontainer">
       <a href="https://www.twitter.com/" target="blank"><i class="fab fa-twitter fa-5x twitterCTA"></i></a>
-      <p><a href="https://www.twitter.com" target="_blank">{{jumboprop.jumboGraphics}}</a></p>
+      <a class="button" href="https://www.twitter.com" target="_blank">{{jumboprop.jumboGraphics}}</a>
     </div>
     <p>{{ jumboprop.jumboCopy }}</p>
 
   </section>
   <!-- ##### how to include below block for jumboGraphics? -->
   <!-- <p><a href="https://www.twitter.com/" target="blank"><i class="fab fa-twitter fa-5x twitterCTA"></i></a></p><a href="https://twitter.com/intent/tweet?button_hashtag=SeattlePGs&ref_src=twsrc%5Etfw" class="twitterIcon twitter-hashtag-button" data-size="large" data-text="Hi! I just discovered Seattle&#39;s best resource for local playgrounds!" data-related="" data-show-count="false" target="blank"> -->
+
+  <!-- ##### v-if cta ##### -->
+  <!-- v-if="jumbotronArray.id === 0" -->
 </template>
 
 <script>
@@ -45,7 +48,7 @@ export default {
     color: #1DA1F2;
   }
 
-  .CTAcontainer a.twitterIcon.twitter-hashtag-button {
+  .CTAcontainer .button {
     padding: .5rem;
     border-radius: 10px;
     color: white;
@@ -53,6 +56,8 @@ export default {
     font-weight: 800;
     margin-bottom: 1rem;
     text-align: center;
+    border-bottom: 3px solid #0a6ca9;
+    border-right: 2px solid #0a6ca9;
   }
 
   @media only screen and (max-width: 330px) {

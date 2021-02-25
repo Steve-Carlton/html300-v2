@@ -4,10 +4,11 @@
     <ul class="nav nav-pills">
       <li class="nav-item"><a id="homeIcon" href="#" data-toggle="tooltip" data-placement="bottom" title="Home">index</a></li>
       <li class="nav-item">
-        <a class="nav-link active" href="./home.html">home</a>
+        <a class="nav-link active" href="#">home</a>
       </li>
+      <!-- file path not equal to route -->
       <li class="nav-item">
-        <a class="nav-link" href="./content.html">content</a>
+        <router-link to="/map" class="nav-link">Test</router-link>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="./about.html">about</a>
@@ -18,7 +19,6 @@
     </ul>
   </nav>
 </template>
-
 <script>
 
 export default {

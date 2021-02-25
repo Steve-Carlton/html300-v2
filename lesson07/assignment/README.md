@@ -14,11 +14,13 @@ In the last assignment in lesson06, you created a responsive website with Bootst
 -	In your forked repo, create a new branch off of master called `lesson-07` or similar
 -   Navigate to the root folder of this assignment within terminal in your fork, `lesson07/assignment`
 - 	Install the Vue CLI if you haven't already with `npm install -g @vue/cli`
-	- 	If installed correctly, running `vue --version` should return a number
+		(You may need to use 'sudo npm install -g @vue/cli' ).
+	-	If installed correctly, running `vue --version` should return a number
 
 ###	Create your project using Vue CLI:
 
 -	Follow the instructions in the Vue CLI documentation: https://cli.vuejs.org/guide/creating-a-project.html. Pass the "--no-git" flag to the create command, to prevent it from initializing the new project as a git repository (necessary because the html300 directory is a repository already, and having nested repositories leads to major problems with git).
+vue create --no-git my-project-name
 	- Choose "default" preset, rather than choosing features manually.
 	- If you're not sure whether to use npm or yarn, choose npm.
 

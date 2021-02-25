@@ -2,16 +2,21 @@
 <div id="app">
   <!-- v-binds the prop to tag. the '=' assigns the text interpolation -->
   <bannerTop v-bind:brandTitle="brandTitle"></bannerTop>
-
   <navbar></navbar>
+
+
   <main>
+
+
 <!-- Loop through an array of objects. create a prop to attach array items to. supply a key for vue. -->
+
     <jumbotron v-for="item in jumbotronArray"
       v-bind:jumboprop="item"
       v-bind:key="item.id">
-      hihihi
     </jumbotron>
   </main>
+  <!-- vue router -->
+  <router-view></router-view>
 </div>
 </template>
 
