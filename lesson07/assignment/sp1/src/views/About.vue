@@ -10,24 +10,29 @@
 <br>
     Aliquam erat volutpat. Sed euismod placerat auctor. Donec bibendum rutrum ex, a finibus odio blandit malesuada. Fusce eget enim libero. Integer sagittis lectus vitae dui auctor imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum metus urna, vehicula in lorem vel, pharetra dignissim est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut pretium turpis, vitae pulvinar ex. Proin interdum pulvinar elit, ut congue eros blandit eget. Duis dignissim libero eu metus.
   </p>
-</section>
-    <section class="aboutImageContainer">
-      <img src="https://picsum.photos/500/300" alt="placeholder image">
-      <img src="https://picsum.photos/500/300" alt="placeholder image">
-      <img src="https://picsum.photos/500/300" alt="placeholder image">
-    </section>
+  </section>
+    <imageContainer v-for="item in imageArray"
+      v-bind:imageprop="item"
+      v-bind:key="item.id">
+    </imageContainer>
   </section>
 </main>
 </template>
 <script>
 //import components
 import navbar from '../components/Navbar.vue'
+import imageContainer from '../components/ImageContainer.vue'
 
 export default {
   el: 'About',
-  components: { navbar },//filename of new and used component
+  components: { navbar, imageContainer },//filename of new and used component
   data() {
     return {
+      imageArray: [
+        { id: 0, image: '<img src="https://picsum.photos/500/300" alt="placeholder image">', },
+        { id: 1, image: '<img src="https://picsum.photos/499/300" alt="placeholder image">', },
+        { id: 2, image: '<img src="https://picsum.photos/501/300" alt="placeholder image">', }
+      ]
     }
   }
 
@@ -38,24 +43,6 @@ export default {
 
 <style scoped>
 
-html, body {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  box-sizing: border-box;
-  background-color: ivory;
-}
-
-main {
-  border: 2px solid teal;
-}
-
 .aboutContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -64,17 +51,9 @@ main {
   margin: 2rem 10%;
 }
 
-.aboutCopy{
-
-}
-
-p {
-
-}
-
 .aboutImageContainer {
-  display: inline-grid;
-  grid-row-gap: 3%;
+  display: grid;
+  grid-row-gap: 2rem;
 }
 
 .aboutImageContainer img {
@@ -85,6 +64,9 @@ p {
 @media only screen and (max-width: 800px) {
   .aboutContainer {
     grid-template-columns: 1fr;
+  }
+  .aboutImageContainer {
+    justify-content: center;
   }
 }
 </style>
