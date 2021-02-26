@@ -2,8 +2,7 @@
 <div id="app">
   <!-- v-binds the prop to tag. the '=' assigns the text interpolation -->
   <bannerTop v-bind:brandTitle="brandTitle"></bannerTop>
-  <!-- vue router -->
-  <!-- only in app.vue template -->
+  <!-- ##### Vue Router ##### only in app.vue template -->
   <router-view></router-view>
 </div>
 </template>
