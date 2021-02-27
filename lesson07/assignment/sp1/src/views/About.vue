@@ -11,10 +11,12 @@
     Aliquam erat volutpat. Sed euismod placerat auctor. Donec bibendum rutrum ex, a finibus odio blandit malesuada. Fusce eget enim libero. Integer sagittis lectus vitae dui auctor imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum metus urna, vehicula in lorem vel, pharetra dignissim est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut pretium turpis, vitae pulvinar ex. Proin interdum pulvinar elit, ut congue eros blandit eget. Duis dignissim libero eu metus.
   </p>
   </section>
-    <imageContainer v-for="item in imageArray"
-      v-bind:imageprop="item"
-      v-bind:key="item.id">
-    </imageContainer>
+    <section class="aboutImageContainer">
+      <imageContainer v-for="item in imageArray"
+        v-bind:imageprop="item"
+        v-bind:key="item.id">
+      </imageContainer>
+    </section>
   </section>
 </main>
 </template>
@@ -51,7 +53,7 @@ export default {
   margin: 2rem 10%;
 }
 
-.aboutImageContainer {
+/* .aboutImageContainer {
   display: grid;
   grid-row-gap: 2rem;
 }
@@ -59,6 +61,10 @@ export default {
 .aboutImageContainer img {
   max-width: 100%;
   height: auto;
+} */
+
+img {
+  border: 2px solid blue;
 }
 
 @media only screen and (max-width: 800px) {

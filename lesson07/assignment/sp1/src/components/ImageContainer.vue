@@ -1,6 +1,5 @@
 <template>
-  <section class="aboutImageContainer" v-html= 'imageprop.image'>
-
+  <section v-html= 'imageprop.image'>
   </section>
 </template>
 

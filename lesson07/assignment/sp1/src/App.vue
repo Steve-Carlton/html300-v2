@@ -46,4 +46,14 @@ html, body {
 main {
   border: 2px solid green;
 }
+
+.aboutImageContainer {
+  display: grid;
+  grid-row-gap: 2rem;
+}
+
+.aboutImageContainer img {
+  max-width: 100%;
+  height: auto;
+}
 </style>
