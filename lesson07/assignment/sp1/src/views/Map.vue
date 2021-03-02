@@ -2,6 +2,7 @@
   <main>
     <navbar></navbar>
     <section class="mapContainer"><h2 class="map">Map</h2></section>
+    <section class="playgroundsContainer"> <h2 class="playgrounds">List container</h2> </section>
   </main>
 </template>
 
@@ -14,6 +15,7 @@ export default {
   components: { navbar },//filename of new and used component
   data() {
     return {
+
     }
   }
 
@@ -43,7 +45,7 @@ main {
 
 }
 
-.mapContainer {
+.mapContainer, .playgroundsContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,6 +62,19 @@ main {
   height: 8rem;
   color: white;
   background: blue;
+  margin: 1rem, auto;
+}
+
+.playgrounds {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: auto;
+  height: 8rem;
+  padding: 2rem;
+  color: white;
+  background: green;
   margin: 1rem, auto;
 }
 </style>

@@ -11,7 +11,6 @@
     <!-- if jumboButton array item present, render on page -->
     <!-- use router-link for link to other views -->
     <div class="jumboButton-container"><router-link class="jumboButton" v-if="jumboprop.jumboButton" to="/map">{{ jumboprop.jumboButton }}</router-link></div>
-
   </section>
 </template>
 
