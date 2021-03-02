@@ -1,16 +1,17 @@
 <template>
 <main class="about">
   <navbar></navbar>
-<h2>What would you like to know?</h2>
+  <h2>What would you like to know?</h2>
   <section class="aboutContainer">
-  <!-- ##### ACCORDION ##### -->
-  <section class="aboutCopy">
+    <!-- ##### ACCORDION ##### -->
+    <section class="aboutCopy">
 
-    <accordion v-for="item in accordionArray"
-      v-bind:accordionprop="item"
-        v-bind:key="item.id"
-    ></accordion>
-  </section>
+      <accordion v-for="item in accordionArray"
+        v-bind:accordionprop="item"
+          v-bind:key="item.id"
+      ></accordion>
+    </section>
+    <!-- ##### IMAGE CONTAINER ##### -->
     <section class="aboutImageContainer">
       <h2 visibility="hidden"></h2>
       <imageContainer v-for="item in imageArray"
@@ -18,7 +19,8 @@
         v-bind:key="item.id">
       </imageContainer>
     </section>
-      </section>
+
+  </section>
 </main>
 </template>
 <script>
@@ -38,22 +40,18 @@ export default {
         { id: 2, image: '<img src="https://picsum.photos/501/300" alt="placeholder image">', }
       ],
       accordionArray: [
-        { id: 0, title: "̄About this project.", copy: "blah blah blah"},
-        { id: 1, title: "̄Resources.", copy: "yep blah blah"},
-        { id: 2, title: "̄What's the latest?", copy: "uh-huh"}
-      ],
-      counterToken: 0,
-    }
-  },
-
-  methods: {
-    accordionCounter: function() {
-        this.counterToken ++;
-        console.log("{{counterToken}}");
+        { id: 0, title: "̄About this project.", image: '<img src="../assets/img/alex-mertz-Hf0VFk1kCUQ-unsplash.jpg" class="img-fluid" alt="Responsive image">', copy: "blah blah blah"},
+        { id: 1, title: "̄Resources.", image: '<img src="https://picsum.photos/500/300" class="img-fluid" alt="Responsive image">', copy: "yep blah blah"},
+        { id: 2, title: "̄What's the latest?", image: '<img src="https://picsum.photos/499/300" class="img-fluid" alt="Responsive image">', copy: "uh-huh"}
+      ]
     }
   }
 
-}
+  // methods: {
+  //   }
+  }
+
+
 </script>
 
 <style scoped>
