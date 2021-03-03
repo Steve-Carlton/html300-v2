@@ -61,6 +61,10 @@ export default {
 
   h1 {
     margin: auto;
+    font-family: cooper-black-std, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3rem;
   }
 
   @media only screen and (max-width: 400px) {

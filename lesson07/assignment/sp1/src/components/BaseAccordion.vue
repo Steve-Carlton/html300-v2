@@ -30,23 +30,30 @@ export default {
 <style scoped>
 .wrapper {
   margin: 0 auto;
-  width: 300px;
-  padding: 10px;
 }
 .accordion {
-  display: flex;
   cursor: pointer;
-
-  margin: 0;
+  margin: 0.5rem 0 0 0;
 }
 .title {
   margin: 0;
-  color: teal;
+  color: white;
+  background-color: #a179d2;
+  border-radius: 8px;
+  padding: .5rem 1rem;
+  text-align: center;
+}
+
+.title:hover {
+  background-color: #572e8a;
 }
 .content {
   text-align: left;
-  width: 100%;
-  border-bottom: 1px solid black;
-  padding: 10px;
+  margin: 0 1rem;
+  padding: .5rem 1rem;
+  width: 94%;
+  background-color: #f2f2f2;
+  border-radius: 0 0 8px 8px;
+
 }
 </style>

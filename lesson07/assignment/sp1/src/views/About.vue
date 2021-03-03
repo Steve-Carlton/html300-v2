@@ -9,7 +9,6 @@
     </section>
     <!-- ##### IMAGE CONTAINER ##### -->
     <section class="aboutImageContainer">
-      <h2 visibility="hidden"></h2>
       <imageContainer v-for="item in imageArray"
         v-bind:imageprop="item"
         v-bind:key="item.id">
@@ -52,13 +51,26 @@ export default {
 
 <style scoped>
 
+h2 {
+  color: white;
+  margin: 1rem;
+  background-color: teal;
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
 .aboutContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 5%;
   grid-row-gap: 3rem;
-  margin: 2rem 10%;
+  margin: 2rem 5%;
 }
+
+  .aboutImageContainer {
+    margin-top: .5rem;
+  }
 
 @media only screen and (max-width: 800px) {
   .aboutContainer {
