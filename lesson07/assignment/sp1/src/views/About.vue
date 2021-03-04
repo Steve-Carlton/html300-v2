@@ -25,7 +25,6 @@ import imageContainer from '../components/ImageContainer.vue'
 import aboutAccordion from '../components/AboutAccordion.vue'
 
 export default {
-  el: 'About',
   components: { navbar, imageContainer, aboutAccordion },//filename of new and used component
   data() {
     return {
