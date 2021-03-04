@@ -24,7 +24,7 @@ export default {
 data() {
   return {
       accordionArray: [
-        { id: 0, title: "̄About this project.", image: '<img src="../assets/img/alex-mertz-Hf0VFk1kCUQ-unsplash.jpg" class="img-fluid" alt="Responsive image">', copy: "blah blah blah"},
+        { id: 0, title: 'About this project.', image: '<img src="../assets/img/alex-mertz-Hf0VFk1kCUQ-unsplash.jpg" class="img-fluid" alt="Responsive image">', copy: "blah blah blah"},
         { id: 1, title: "̄Resources.", image: '<img src="https://picsum.photos/500/300" class="img-fluid" alt="Responsive image">', copy: "yep blah blah"},
         { id: 2, title: "̄What's the latest?", image: '<img src="https://picsum.photos/499/300" class="img-fluid" alt="Responsive image">', copy: "uh-huh"}
       ]

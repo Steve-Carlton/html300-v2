@@ -2,7 +2,7 @@
 <main class="about">
   <navbar></navbar>
   <h2>What would you like to know?</h2>
-  <section class="aboutContainer">
+  <section class="about__aboutContainer">
     <!-- ##### ACCORDION ##### -->
     <section class="aboutCopy">
       <aboutAccordion></aboutAccordion>
@@ -34,22 +34,16 @@ export default {
         { id: 1, image: '<img src="https://picsum.photos/499/300" alt="placeholder image">', },
         { id: 2, image: '<img src="https://picsum.photos/501/300" alt="placeholder image">', }
       ]
-      // accordionArray: [
-      //   { id: 0, title: "̄About this project.", image: '<img src="../assets/img/alex-mertz-Hf0VFk1kCUQ-unsplash.jpg" class="img-fluid" alt="Responsive image">', copy: "blah blah blah"},
-      //   { id: 1, title: "̄Resources.", image: '<img src="https://picsum.photos/500/300" class="img-fluid" alt="Responsive image">', copy: "yep blah blah"},
-      //   { id: 2, title: "̄What's the latest?", image: '<img src="https://picsum.photos/499/300" class="img-fluid" alt="Responsive image">', copy: "uh-huh"}
-      // ]
     }
   }
-
   // methods: {
   //   }
-  }
+}
 
 
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 h2 {
   color: white;
@@ -60,16 +54,21 @@ h2 {
   font-weight: bold;
 }
 
-.aboutContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 5%;
-  grid-row-gap: 3rem;
-  margin: 2rem 5%;
+.about{
+  &__aboutContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5%;
+    grid-row-gap: 3rem;
+    margin: 2rem 5%;
+    grid-row-gap: 2rem;
+  }
 }
 
   .aboutImageContainer {
     margin-top: .5rem;
+    display: grid;
+    grid-row-gap: 2rem;
   }
 
 @media only screen and (max-width: 800px) {
