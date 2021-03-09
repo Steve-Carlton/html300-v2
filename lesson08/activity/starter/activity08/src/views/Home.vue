@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <post></post>
-    <img alt="Vue logo" src="../assets/logo.png">
+    <post :postProp="myGreeting"></post>
   </div>
 </template>
 
@@ -11,15 +10,22 @@ import post from '../components/Post.vue'
 
 export default {
   name: 'Home',
-  components: { post, },
+  components: { post },
   data() {
     return {
+      myGreeting: "The type in blue is bound to the prop of element post (postProp). The content will change given how the view file supplies the value for v-bind:postProp='...'",
       articleArray: [
         {id: 0, article: '1'},
         {id: 1, article: '2'},
         {id: 2, article: '3'}
-      ]
+      ],
     }
   }
 }
 </script>
+
+<style>
+h1 {
+  color: blue;
+}
+</style>

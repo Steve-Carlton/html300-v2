@@ -1,14 +1,31 @@
 <template>
-  <p>confirm Post component</p>
+  <section>
+    <p>{{msg}}</p>
+    <h1>{{postProp}}</h1>
+  </section>
 </template>
 
 <script>
 export default {
   name: "post",
+  props: {
+    postProp: String,
+  },
+  data() {
+    return {
+      msg: "The type in red is a declarative rendering. The variable and the content both reside in component 'post' and is not dynamic.",
+    }
+  }
 }
 </script>
 
-<style></style>
+<style>
+
+p {
+  color: red;
+}
+
+</style>
 
 
 <!-- DEV NOTES -->
