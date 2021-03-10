@@ -1,7 +1,11 @@
 <template>
   <section>
-    <p>{{msg}}</p>
-    <h1>{{postProp}}</h1>
+    <!-- <p>{{msg}}</p> -->
+    <!-- <h1>{{postProp}}</h1> -->
+    <h2>{{postProp.title}}</h2>
+    <h1>{{postProp.author}}</h1>
+    <h5>{{postProp.excerpt}}</h5>
+    <br>
   </section>
 </template>
 
@@ -25,6 +29,10 @@ p {
   color: red;
 }
 
+
+section {
+  border: 1px solid grey;
+}
 </style>
 
 
