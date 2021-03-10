@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <post :postProp="myGreeting"></post>
+    <!-- <post :postProp="myGreeting"></post> -->
     <!-- <p>{{test}}</p> -->
     <section class="sampleArray">
       <post v-for="article in articleArray"
@@ -20,8 +20,8 @@ export default {
   components: { post },
   data() {
     return {
-      test: "Another example of declarative rendering contained within the Home.vue views file",
-      myGreeting: "The type in blue is bound to the prop of element post (postProp). The content will change given how the view file supplies the value for v-bind:postProp='...'",
+      // test: "Another example of declarative rendering contained within the Home.vue views file",
+      // myGreeting: "The type in blue is bound to the prop of element post (postProp). The content will change given how the view file supplies the value for v-bind:postProp='...'",
       articleArray: [
       { id: 1, author: 'Robin Rendle', title: 'A Conspiracy to Kill IE6', likes: 10, category: 'browsers', excerpt: 'Chris Zacharias published a few notes about why the team at YouTube added a banner that asked users to switch from IE6 to a more modern browser back in 2009' },
       { id: 2, author: 'Raymond Camden', title: 'Making the Move from jQuery to Vue', likes: 15, category: 'vue', excerpt: 'As someone who has used jQuery for many. years and has recently become a Vue convert, I thought it would be an interesting topic to discuss the migration process of working with one to the other.' },

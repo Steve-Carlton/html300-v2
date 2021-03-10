@@ -17,7 +17,7 @@ export default {
   },
   data() {
     return {
-      msg: "The type in red is a declarative rendering from the Post.vue component file. The variable and the content both reside in component 'post' and is not dynamic.",
+      // msg: "The type in red is a declarative rendering from the Post.vue component file. The variable and the content both reside in component 'post' and is not dynamic.",
     }
   }
 }
@@ -32,6 +32,7 @@ p {
 
 section {
   border: 1px solid grey;
+  background-color: #f2f2f2;
 }
 </style>
 
